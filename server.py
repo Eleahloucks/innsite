@@ -9,8 +9,8 @@ import crud
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-app.secret_key = "dev" # does this need to be changed?
-app.jinja_env.undefined = StrictUndefined
+# app.secret_key = "dev" # does this need to be changed?
+# app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")
 def homepage():
@@ -18,11 +18,11 @@ def homepage():
 
     return render_template("homepage.html")
 
-@app.route("/movies")
+@app.route("/locations")
 def show_all_movies():
-    """Show all movies"""
-    all_movies = crud.get_all_movies()
-    return render_template("all_movies.html", movies = all_movies)
+    """Show all locations"""
+    all_locations = crud.get_all_movies()
+    return render_template("all_locations.html", locations = all_locations)
 
 
 

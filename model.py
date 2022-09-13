@@ -19,6 +19,8 @@ class User(db.Model): #one user has many bookings
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
 
+    bookings = db.relationship("Booking", back_populates="user")
+
     def __repr__(self):
         return f'<User user_id={self.user_id} email={self.email}>'
 
@@ -58,6 +60,8 @@ class Location(db.Model): #one location has many amenity per location
     price = db.Column(db.Integer)
     overview = db.Column(db.String)
 
+    bookings = db.relationship("Booking", back_populates="location")
+
     #set up relationship to amenities and location_amenties middle table
     amenities = db.relationship("Amenity", secondary = "location_amenities", back_populates = "locations")
 
@@ -85,7 +89,7 @@ class Amenity(db.Model): #one amenity is related to a location with many ameniti
 
 
 #took syntax from BookGenre in many to many demo
-class LocationAmenity(db.Model): #middle table
+class LocationAmenity(db.Model): #middle table - do not need to save additional info here
     """An amenity of a specific location."""
 
     __tablename__ = "location_amenities"
@@ -103,7 +107,8 @@ class LocationAmenity(db.Model): #middle table
 def connect_to_db(app):
     """Connect to database."""
 
-    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///many-to-many"
+    #stating which db to connect to
+    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///projectdb"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     # this would output the raw SQL, currently off as it can be noisy
@@ -119,8 +124,8 @@ if __name__ == "__main__":
     import os
 
     #need to change text here
-    os.system("dropdb many-to-many --if-exists")
-    os.system("createdb many-to-many")
+    os.system("dropdb projectdb --if-exists")
+    os.system("createdb projectdb")
 
     connect_to_db(app)
 

@@ -9,8 +9,8 @@ import crud
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-# app.secret_key = "dev" # does this need to be changed?
-# app.jinja_env.undefined = StrictUndefined
+app.secret_key = "dev" # fixme
+app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")
 def homepage():

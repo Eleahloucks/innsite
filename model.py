@@ -38,13 +38,14 @@ class Booking(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     location_id = db.Column(db.Integer, db.ForeignKey("locations.location_id"))
     availability = db.Column(db.DateTime)
-    dates_booked= db.Column(db.DateTime)
+    arrival= db.Column(db.DateTime)
+    departure = db.Column(db.DateTime)
 
     user = db.relationship("User", back_populates="bookings")
     location = db.relationship("Location", back_populates="bookings")
 
     def __repr__(self):
-        return f'<Booking booking_id={self.booking_id} dates_booked={self.dates_booked}>'
+        return f'<Booking booking_id={self.booking_id} arrival={self.arrival} departure = {self.departure}>'
 
 
 
@@ -56,7 +57,7 @@ class Location(db.Model): #one location has many amenity per location
     location_id = db.Column(db.Integer,
                         autoincrement= True,
                         primary_key=True)
-    location = db.Column(db.String)
+    location_title = db.Column(db.String)
     price = db.Column(db.Integer)
     overview = db.Column(db.String)
 
@@ -66,7 +67,7 @@ class Location(db.Model): #one location has many amenity per location
     amenities = db.relationship("Amenity", secondary = "location_amenities", back_populates = "locations")
 
     def __repr__(self):
-        return f'<Location location_id={self.location_id} location={self.location} price={self.price}>'
+        return f'<Location location_id={self.location_id} location_title={self.location_title} price={self.price}>'
 
 
 

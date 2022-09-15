@@ -19,10 +19,27 @@ def homepage():
     return render_template("homepage.html")
 
 @app.route("/locations")
-def show_all_movies():
+def show_all_locations():
     """Show all locations"""
-    all_locations = crud.get_all_movies()
+    all_locations = crud.get_all_locations()
     return render_template("all_locations.html", locations = all_locations)
+
+@app.route("/login", methods = ['POST'])
+def login():
+    """Show login"""
+    email = request.form.get('email')
+    password = request.form.get('password')
+    potential_user = crud.get_user_by_email(email)
+
+    if potential_user.password == password:
+        session['user_id'] = potential_user.user_id
+        flash('Logged in!')
+    else:
+        flash('Not logged in!')
+    return redirect("/")
+
+
+
 
 
 

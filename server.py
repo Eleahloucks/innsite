@@ -38,6 +38,12 @@ def login():
         flash('Not logged in!')
     return redirect("/")
 
+@app.route("/locations/<location_id>")
+def location_details(location_id):
+    """Show details of a location."""
+    location = crud.get_location_by_id(location_id)
+    return render_template("location_details.html", location = location)
+
 
 
 

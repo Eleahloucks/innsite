@@ -1,24 +1,39 @@
 """CRUD operations."""
 from model import db, User, Location, Booking, Amenity, LocationAmenity, connect_to_db
+#MVP
+# Guests can see the features and locations where they can book
+# When booking they will be asked to create login so they have confirmation of booking
+# Home and about page will have photos and information about why they should work and travel and where.
+
 #TODAY
-#add search booking by id funtion DONE
-#display locations so user can save location or make a booking DONE
-#add sample bookings to seed WORKING
+  #add photo by adding to location class
+  #add amenities to each page -
+    #create crud functions
+    #seed the data
 
-# what happens when they click on location ...where should it go?
-# what do i want my user to be able to accompish? What is in my MVP? What is most important?
-# create each locations page
+  # think about booking flow
+  # create each locations page by have server route that can display each location see movies for example
+
+#Qs for staff
+  #availability:
+    #should availibility be under my location class instead of booking?
+    #How should i format all available dates?
+    #I'll need to blackout booked dates also.
+  #locations & amenities
+    #would it make sense to put these into their own json files to populate my 10 locations?
+    #how is my google maps going to come into play with locations?
 
 
-#Qs
+
+#GENERAL Q's for myself
+  # what do i want my user to be able to accompish? What is in my MVP? What is most important?
 
 
 #LATER
-#i want to change my hompage so there is a link to login/create user on the navbar and that renders a login.html template
-#i want to add a login html template
-#vaguely group things together on homepage - minimal css
-#wait to connect api until all local stuff is sorted
-#work with api outside of server.py, make a playground.py(maybe in .gitignore)
+  #i want to change my hompage so there is a link to login/create user on the navbar and that renders a login.html template
+  #i want to add a login html template
+  #when i'm ready to work with api:
+    #outside of server.py, make a playground.py(maybe in .gitignore)
 
 #USER FUNCTIONS
 def create_user(email, password):

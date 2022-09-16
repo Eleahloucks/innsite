@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ location.location_title }} - Details{% endblock %}
+
+{% block body %}
+<h1>{{ location.location_title }}</h1>
+
+<p>
+  {{ location.overview }}
+</p>
+<a href = '/locations'> See all Locations </a>
+
+
+{% endblock %}
+<!-- <img src="{{ movie.poster_path }}"> will add location images later -->

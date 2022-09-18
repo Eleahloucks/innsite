@@ -37,7 +37,6 @@ class Booking(db.Model):
                         primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     location_id = db.Column(db.Integer, db.ForeignKey("locations.location_id"))
-    availability = db.Column(db.DateTime)
     arrival= db.Column(db.DateTime)
     departure = db.Column(db.DateTime)
 
@@ -60,6 +59,8 @@ class Location(db.Model): #one location has many amenity per location
     location_title = db.Column(db.String)
     price = db.Column(db.Integer)
     overview = db.Column(db.String)
+    description = db.Column(db.String)
+    # capacity = db.Column(db.Integer)
 
     bookings = db.relationship("Booking", back_populates="location")
 
@@ -67,7 +68,7 @@ class Location(db.Model): #one location has many amenity per location
     amenities = db.relationship("Amenity", secondary = "location_amenities", back_populates = "locations")
 
     def __repr__(self):
-        return f'<Location location_id={self.location_id} location_title={self.location_title} price={self.price}>'
+        return f'<Location location_id={self.location_id} location_title={self.location_title} price={self.price} amenities= {self.amenities}>'
 
 
 
@@ -79,13 +80,13 @@ class Amenity(db.Model): #one amenity is related to a location with many ameniti
     amenity_id = db.Column(db.Integer,
                         autoincrement= True,
                         primary_key=True)
-    title = db.Column(db.String)
+    amenity_title = db.Column(db.String)
 
     #set up relationship to locations and location_amenties middle table
     locations = db.relationship("Location", secondary = "location_amenities", back_populates = "amenities")
 
     def __repr__(self):
-        return f'<Amenity amenity_id={self.amenity_id} title={self.title}>'
+        return f'<Amenity amenity_id={self.amenity_id} amenity_title={self.amenity_title}>'
 
 
 

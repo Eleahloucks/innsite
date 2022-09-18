@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}All Locations{% endblock %}
+
+{% block body %}
+<ul>
+{% for location in locations %}
+   <li><a href="locations/{{location.location_id}}">{{location.location_title}}</a> </li>
+{% endfor %}
+</ul>
+{% endblock %}

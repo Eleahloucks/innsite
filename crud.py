@@ -7,14 +7,15 @@ from model import db, User, Location, Booking, Amenity, LocationAmenity, connect
 
 #TODAY
   #cleanup availability deltions - DONE
-  #add photo by adding to location class - WEEKEND
+  #add photo by adding to location class - DONE
     #save images to static directory one per location
-  #add all locations and amenities in seed db file - WEEKEND
+  #add all locations and amenities in seed db file - DONE
   #add HTML booking form to location details page - MONDAY
   #check login functionality and place in navbar - WEEKEND
 
 
 #Qs for staff
+  #adding image data to location model
 
 
 

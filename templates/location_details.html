@@ -3,41 +3,28 @@
 {% block title %}{{ location.location_title }} - Details{% endblock %}
 
 {% block body %}
-<form>
+<form id = "book-form" method="post" action = "/book-now">
   <fieldset>
-    <label for = "name">Your name</label>
-    <input type="text" name="name" id = "name">
-
+    <!-- need the format to be like global_date_format = "%m-%d-%Y"  -->
     <div>
-      <label for = "recipient">Who are we sending this to?</label>
-      <input type="text" name="recipient" id = "recipient">
+      <label for = "arrival">Arrival Date:</label>
+      <input type="text" name="arrival" id = "arrival">
     </div>
 
+    <div>
+      <label for = "departure">Departure Date:</label>
+      <input type="text" name="departure" id = "departure">
+    </div>
 
-    <label for="melon">Choose a melon</label>
-    <select name ="melon" id = "melon">
-      <option value = "watermelon">Watermelon</option>
-      <option value = "canteloupe">Canteloupe</option>
-      <option value = "honeydew">Honeydew</option>
-    </select>
+    <div>
+      <label for="location">Location:</label>
+      <select name ="location" id = "location">
+          <option value = "{{location.location_title}}">{{location.location_title}}</option>
+      </select>
+    </div>
 
+    <button id = "book-now" type = "button" value = 'book-now'> Book Now </button>
 
-    <label for = "time">When should we deliver?</label>
-    <select name = "time" id = "time">
-      <option type = 'radio' name = "time" value = 'am'><button>Morning</button></option>
-      <option type = 'radio' name = "time" value = 'pm'><button>Evening</button></option>
-      <option type = 'radio' name = "time" value = 'any'><button>Any Time</button></option>
-    </select>
-    <br>
-
-    <label for = "message">Enter your message:</label>
-    <textarea name = "message" id = "message"></textarea>
-
-    <label for = "subscribe">Subscribe to our newsletter</label>
-    <input type = "checkbox" name = "subscribe" value = 'yes' id = "subscribe">
-      Yes
-    </input>
-    <button type = "button" value = 'submit'> Submit </button>
   </fieldset>
 </form>
 
@@ -46,6 +33,8 @@
 <p>
   {{ location.overview }}
 </p>
+<img src = {{location.img}}>
+
 <p>
   {% for amenity in location.amenities %}
    <li>{{ amenity.amenity_title }}</li>
@@ -56,4 +45,3 @@
 
 
 {% endblock %}
-<!-- <img src="{{ movie.poster_path }}"> will add location images later -->

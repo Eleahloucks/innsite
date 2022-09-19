@@ -61,6 +61,7 @@ class Location(db.Model): #one location has many amenity per location
     overview = db.Column(db.String)
     description = db.Column(db.String)
     # capacity = db.Column(db.Integer)
+    img = db.Column(db.String)
 
     bookings = db.relationship("Booking", back_populates="location")
 

@@ -8,12 +8,12 @@
     <!-- need the format to be like global_date_format = "%m-%d-%Y"  -->
     <div>
       <label for = "arrival">Arrival Date:</label>
-      <input type="text" name="arrival" id = "arrival">
+      <input type="date" name="arrival" id = "arrival">
     </div>
 
     <div>
       <label for = "departure">Departure Date:</label>
-      <input type="text" name="departure" id = "departure">
+      <input type="date" name="departure" id = "departure">
     </div>
 
     <div>
@@ -22,7 +22,7 @@
           <option value = "{{location.location_title}}">{{location.location_title}}</option>
       </select>
     </div>
-
+    <input type = "hidden" value = {{location.location_id}} id = "location_id">
     <button id = "book-now" type = "button" value = 'book-now'> Book Now </button>
 
   </fieldset>
@@ -33,7 +33,7 @@
 <p>
   {{ location.overview }}
 </p>
-<img src = {{location.img}}>
+<img src ={{location.img}}>
 
 <p>
   {% for amenity in location.amenities %}
@@ -43,5 +43,5 @@
 
 <a href = '/locations'> See all Locations </a>
 
-
+<script src = "/static/index.js"></script>
 {% endblock %}

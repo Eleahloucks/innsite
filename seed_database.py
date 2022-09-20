@@ -125,7 +125,6 @@ location_8 = create_location(
   "/static/img/bali.jpg",
   [amenity_1, amenity_2, amenity_3, amenity_4, amenity_5, amenity_6, amenity_7, amenity_8, amenity_9, amenity_10, amenity_11, amenity_12, amenity_13, amenity_14, amenity_15, amenity_16, amenity_17, amenity_18, amenity_19, amenity_20, amenity_21]
   )
-
 location_9 = create_location(
   'Fuerteventura, Canary Islands',
   1240,
@@ -134,7 +133,6 @@ location_9 = create_location(
   "/static/img/canary_islands.jpeg",
   [amenity_1, amenity_2, amenity_3, amenity_4, amenity_5, amenity_6, amenity_7, amenity_8, amenity_9, amenity_10, amenity_11, amenity_12, amenity_13, amenity_14, amenity_15, amenity_16, amenity_17, amenity_18, amenity_19, amenity_20, amenity_21]
   )
-
 location_10 = create_location(
   'Santa Teresa, Costa Rica',
   1375,

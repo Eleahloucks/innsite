@@ -1,21 +1,30 @@
 """CRUD operations."""
 from model import db, User, Location, Booking, Amenity, LocationAmenity, connect_to_db
+from datetime import datetime
 #MVP
 # Guests can see the amenities and locations where they can book - DONE
 # When booking they will be asked to create login so they have confirmation of booking
 # Home and about pages will have photos and information about why they should work and travel and where.
 
 #TODAY
-  #cleanup availability deltions - DONE
-  #add photo by adding to location class - DONE
-    #save images to static directory one per location
-  #add all locations and amenities in seed db file - DONE
-  #add HTML booking form to location details page - MONDAY
-  #check login functionality and place in navbar - WEEKEND
+  #create a map
+    #center on location
+    #set a zoom
+
+  # make a sign out button
+  # create booking page - shows all locations and a map of where they are - DONE
+  # start connected api
+
+  # WORKING - make fetch reqest that hits route i am about to make  -  index.JS  -
+  #in hande booking route, print statements that shows it was sucessful
+    #make a route to handle booking request
+      #if they are logged in they can sucessfully book
+      #if not they need to log in - can still save that data in session temporarily so they dont have to retype
+  #get data from form so that they can sucessfully book if they are logged in
 
 
 #Qs for staff
-  #adding image data to location model
+
 
 
 
@@ -28,7 +37,8 @@ from model import db, User, Location, Booking, Amenity, LocationAmenity, connect
 
     #option to book on each location page if logged in
       #form that requests arrival & departure and a book now button
-      #paymemt field next? what is a simple way to to confirm booking
+      #flash message for successful booking and maybe reroute to their profile, could show their bookings
+      #maybe create a your bookings
 
     #link to book on navbar that routes to a booking page
       #this shows all locations and has a map to the right with everything on the map
@@ -40,6 +50,7 @@ from model import db, User, Location, Booking, Amenity, LocationAmenity, connect
     #outside of server.py, make a playground.py(maybe in .gitignore)
 
 #AFTER MVP
+  #use react in booking feature
   #add capacity feature
     #store capacity in location class
     #create crud function to
@@ -98,6 +109,12 @@ def get_location_by_id(location_id):
 
 
 #BOOKING FUNCTIONS
+#global_date_format = "%m-%d-%Y"
+#"%Y-%m-%d"
+#import datetime to server temporarily
+#try making datetime objs in server based on what i get from user
+#use those to create booking objs
+#decide if i want it in the crud function or not.
 def create_booking(arrival, departure, user, location):
   """Create and return a new booking."""
   booking = Booking(arrival = arrival, departure = departure, user = user, location = location)

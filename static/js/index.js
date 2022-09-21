@@ -1,6 +1,8 @@
 'use strict';
 console.log('js connected');
 
+// BOOKING  AJAX
+
 const button = document.querySelector('#book-now');
 
 button.addEventListener('click', () => {
@@ -32,4 +34,6 @@ button.addEventListener('click', () => {
     });
 });
 
+// USER LOGOUT AJAX
 
+// function userLogout()

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Work Travel Co-Living Home{% endblock %}
+
+{% block body %}
+  <h1>Welcome {{user.email}}!</h1>
+  <h2>Here is your password {{user.password}}!</h1>
+
+
+
+<div>
+  {% for booking in user.bookings %}
+
+  <p> You are booked from {{ booking.arrival }} to {{ booking.departure }} at location {{ booking.location['location_title'] }}.</p>
+  {% endfor %}
+</div>
+
+<form action = "/sign-out" method="POST">
+  <div>
+    <input type="Submit" value = "Sign Out" />
+  </div>
+</form>
+
+
+
+
+
+
+
+
+{% endblock %}

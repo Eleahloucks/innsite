@@ -88,6 +88,30 @@ def show_book_now():
 
     return render_template("book_now.html", locations = all_locations)
 
+@app.route("/profile/")
+def show_profile():
+    """Show user profile."""
+    user = crud.get_user_by_id(session['user_id'])
+
+    return render_template("profile.html", user = user)
+
+@app.route("/sign-out", methods = ['POST'])
+def sign_out_user():
+    """Sign out user"""
+
+    session.clear()
+
+    return redirect("/")
+
+
+@app.route('/about')
+def show_about():
+    """Display about page."""
+
+    return render_template("about.html")
+
+
+
 
 
 

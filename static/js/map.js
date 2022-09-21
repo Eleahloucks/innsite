@@ -1,58 +1,106 @@
 'use strict';
-'use strict';
+//check to make sure js is connected
+console.log('js connected');
 
-// We use a function declaration for initMap because we actually *do* need
-// to rely on value-hoisting in this circumstance.
-//
 function initMap() {
-  const sfBayCoords = {
-    lat: 37.601773,
-    lng: -122.20287,
+
+  const atlanticCoords = {
+    lat: 34.50673836013896,
+    lng: -39.811884909459955,
   };
 
   const basicMap = new google.maps.Map(document.querySelector('#map'), {
-    center: sfBayCoords,
-    zoom: 11,
+    center: atlanticCoords,
+    zoom: 1,
   });
 
-  const sfMarker = new google.maps.Marker({
-    position: sfBayCoords,
-    title: 'SF Bay',
+  const atlanticMarker = new google.maps.Marker({
+    position: atlanticCoords,
+    title: 'Atlantic',
     map: basicMap,
   });
 
-  sfMarker.addListener('click', () => {
+  atlanticMarker.addListener('click', () => {
     alert('Hi!');
   });
 
-  const sfInfo = new google.maps.InfoWindow({
-    content: '<h1>San Francisco Bay!</h1>',
+  const atlanticInfo = new google.maps.InfoWindow({
+    content: '<h1>atlantic!</h1>',
   });
 
-  sfInfo.open(basicMap, sfMarker);
+  atlanticInfo.open(basicMap, atlanticMarker);
 
   const locations = [
     {
-      name: 'Hackbright Academy',
+      name: 'Boulder, CO',
       coords: {
-        lat: 37.7887459,
-        lng: -122.4115852,
+        lat: 40.01563220031631,
+        lng: -105.27025676465864,
       },
     },
     {
-      name: 'Powell Street Station',
+      name: 'Lisbon, Portugal',
       coords: {
-        lat: 37.7844605,
-        lng: -122.4079702,
+        lat: 38.7242049777057,
+        lng: -9.13926109963694,
       },
     },
     {
-      name: 'Montgomery Station',
+      name: 'San Francisco, CA',
       coords: {
-        lat: 37.7894094,
-        lng: -122.4013037,
+        lat: 37.75550777992014,
+        lng: -122.4945940666157,
       },
     },
+    {
+      name: 'Manhattan, NY',
+      coords: {
+        lat: 40.732509540838706,
+        lng: -73.98777282542899,
+      },
+    },
+    {
+      name: 'Puerto Rico, San Juan',
+      coords: {
+        lat: 18.410867123820488,
+        lng: -66.04850152288675,
+      },
+    },
+    {
+      name: 'Morocco, North Africa',
+      coords: {
+        lat: 33.66335789287453,
+        lng: -7.228298824177478,
+      },
+    },
+    {
+      name: 'Bidart, France',
+      coords: {
+        lat: 43.44625284939808,
+        lng: -1.5884287992049693,
+      },
+    },
+    {
+      name: 'Canggu, Bali',
+      coords: {
+        lat: -8.65471615699866,
+        lng: 115.12576792271399,
+      },
+    },
+    {
+      name: 'Fuerteventura, Canary Islands',
+      coords: {
+        lat: 28.30226540939817,
+        lng: -13.908063377779829,
+      },
+    },
+    {
+      name: 'Santa Teresa, Costa Rica',
+      coords: {
+        lat: 9.631830142859062,
+        lng: -85.13586287262456,
+      },
+    }
   ];
 
   const markers = [];

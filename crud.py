@@ -1,19 +1,21 @@
 """CRUD operations."""
 from model import db, User, Location, Booking, Amenity, LocationAmenity, connect_to_db
 from datetime import datetime
-#MVP
+#MVP - Innsite
 # Guests can see the amenities and locations where they can book - DONE
-# When booking they will be asked to create login so they have confirmation of booking
-# Home and about pages will have photos and information about why they should work and travel and where.
+# When booking they will be asked to create login so they have confirmation of booking - done
+# Home and about pages will have photos and information about why they should work and travel and where. -
 
-#TODAY
-  #create a map
-    #center on location
-    #set a zoom
+#TODAY -
 
-  # make a sign out button
-  # create booking page - shows all locations and a map of where they are - DONE
-  # start connected api
+  # create profile page that shows the user's info and places they have booked.
+    #new html template query the db for their bookings
+  # make a sign out button -
+    #ajax route that can log the user out and redirects to login page
+    #make a helper function, they may need to be logged out bc of a timeout etc
+  # finish MVP! create about page -
+  # brainstorm reviews feature - association table
+
 
   # WORKING - make fetch reqest that hits route i am about to make  -  index.JS  -
   #in hande booking route, print statements that shows it was sucessful
@@ -80,6 +82,11 @@ def get_user_by_email(email):
     """Return user by looking up their email."""
 
     return User.query.filter(User.email == email).first()
+
+def get_user_by_id(user_id):
+    """Return user by looking up their id."""
+
+    return User.query.get(user_id)
 
 
 #LOCATION FUNCTIONS

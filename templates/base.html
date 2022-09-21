@@ -14,9 +14,12 @@
   <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Home
+            <a class="navbar-brand" href="/">Innsite
             </a>
             <div class="collapse navbar-collapse">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="/about"> <img class="about"> What is Innsite?</a>
+                </div>
                 <div class="navbar-nav">
                     <a class="nav-link" href="/locations"> <img class="all-locations">Locations</a>
                 </div>
@@ -25,11 +28,12 @@
               </div>
               <div class="navbar-nav">
                 {% if 'email' in session %}
-                <a class="nav-link" href="/login"> <img class="log-in">{{session['email']}}</a>
+                <a class="nav-link" href="/profile"> <img class="log-in">{{session['email']}}</a>
                 {% else %}
                 <a class="nav-link" href="/login"> <img class="log-in">Log In</a>
                 {% endif %}
               </div>
+
             </div>
         </div>
     </nav>

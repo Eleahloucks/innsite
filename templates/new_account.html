@@ -3,7 +3,15 @@
 
 {% block body %}
 <h2>Create an Account</h2>
-  <form action="/users" method="POST">
+  <form action="/create-account" method="POST">
+    <p>
+      First Name <input type="text" name="fname">
+    </p>
+
+    <p>
+      Last <input type="text" name="lname">
+    </p>
+
     <p>
       Email <input type="text" name="email">
     </p>

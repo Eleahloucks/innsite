@@ -1,73 +1,40 @@
 """CRUD operations."""
-from model import db, User, Location, Booking, Amenity, LocationAmenity, connect_to_db
+from model import db, User, Location, Booking, Amenity, LocationAmenity, Review, connect_to_db
 from datetime import datetime
 #MVP - Innsite
 # Guests can see the amenities and locations where they can book - DONE
-# When booking they will be asked to create login so they have confirmation of booking - done
-# Home and about pages will have photos and information about why they should work and travel and where. -
+# When booking they will be asked to create login so they have confirmation of booking - Done
+# Home and about pages will have photos and information about why they should work and travel and where. - DONE
 
 #TODAY -
-
-  # create profile page that shows the user's info and places they have booked.
-    #new html template query the db for their bookings
-  # make a sign out button -
-    #ajax route that can log the user out and redirects to login page
-    #make a helper function, they may need to be logged out bc of a timeout etc
-  # finish MVP! create about page -
-  # brainstorm reviews feature - association table
-
-
-  # WORKING - make fetch reqest that hits route i am about to make  -  index.JS  -
-  #in hande booking route, print statements that shows it was sucessful
-    #make a route to handle booking request
-      #if they are logged in they can sucessfully book
-      #if not they need to log in - can still save that data in session temporarily so they dont have to retype
-  #get data from form so that they can sucessfully book if they are logged in
+  # populate content on home
+  # populate content on profile
+  # populate content on about
+  # put reviews on locations
 
 
 #Qs for staff
 
-
-
-
 #GENERAL Q's for myself
-  #Login flow
-    #wondering if it would be the simplest to make everyone log in before starting to book
-  #Booking flow
-    #any book now button would reroute to login
-      #if they are already logged in then show booking form
-
-    #option to book on each location page if logged in
-      #form that requests arrival & departure and a book now button
-      #flash message for successful booking and maybe reroute to their profile, could show their bookings
-      #maybe create a your bookings
-
-    #link to book on navbar that routes to a booking page
-      #this shows all locations and has a map to the right with everything on the map
-
-#LATER
-  #i want to change my hompage so there is a link to login/create user on the navbar and that renders a login.html template
-  #i want to add a login html template
-  #when i'm ready to work with api:
-    #outside of server.py, make a playground.py(maybe in .gitignore)
 
 #AFTER MVP
-  #use react in booking feature
+  #1 create review feature in react - might need to make a form in react
+  #make gallery class that is one to many with location,
+    #each main photo will be the main phot and galleries will show on each locaton detail page
+
   #add capacity feature
     #store capacity in location class
     #create crud function to
       #query bookings table for records with location id
         # show arrival and departure dates that overlap
         # select all from bookings where loc id = location 1 and arrival date is less that date a and/or departure date is greater than date b
-  #make gallery class that is one to many with location,
-    #each main photo will be the main phot and galleries will show on each locaton detail page
   #make SQL locations and amenitites dump file
 
 #USER FUNCTIONS
-def create_user(email, password):
+def create_user(email, password, fname, lname):
     """Create and return a new user."""
 
-    user = User(email=email, password=password)
+    user = User(email=email, password=password, fname = fname, lname = lname)
     db.session.add(user)
     db.session.commit()
 
@@ -88,6 +55,26 @@ def get_user_by_id(user_id):
 
     return User.query.get(user_id)
 
+#REVIEW FUNCTIONS
+
+def create_review(title, body, score, user_id, location_id):
+  """Create a review."""
+
+  review = Review(title = title, body = body, score = score, user_id = user_id, location_id = location_id)
+  db.session.add(review)
+  db.session.commit()
+
+  return review
+
+def get_review_by_location_id(location_id):
+    """Get review by location id."""
+
+    return Review.query.filter(Review.location_id == location_id).first()
+
+def get_review_by_user_id(user_id):
+    """Get review by user id."""
+
+    return Review.query.filter(Review.user_id == user_id).first()
 
 #LOCATION FUNCTIONS
 def get_all_locations():
@@ -122,6 +109,17 @@ def get_location_by_id(location_id):
 #try making datetime objs in server based on what i get from user
 #use those to create booking objs
 #decide if i want it in the crud function or not.
+
+#i will call the function for arrival and departure
+def get_datetime_format(date_input):
+  """get global format arrival and departure"""
+
+  input_date_format = "%Y-%m-%d"
+  global_data_format = "%m-%d-%Y"
+  return datetime.strptime(date_input, input_date_format).strftime(global_data_format)
+
+
+
 def create_booking(arrival, departure, user, location):
   """Create and return a new booking."""
   booking = Booking(arrival = arrival, departure = departure, user = user, location = location)
@@ -138,7 +136,7 @@ def get_booking_by_id(booking_id):
 def get_booking_by_user_id(user_id):
   """Return the booking by the users id."""
 
-  return Booking.query.filter(User.user_id == user_id).first()
+  return Booking.query.filter(Booking.user_id == user_id).first()
 
 
 #AMENITIES FUNCTIONS

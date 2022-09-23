@@ -9,7 +9,7 @@ import crud
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-app.secret_key = "dev" # fixme
+app.secret_key = "dekdjlsjflskv" # fixme
 app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")
@@ -29,6 +29,24 @@ def show_login():
     """Show login form."""
 
     return render_template("login.html")
+
+@app.route('/create-account', methods=["GET"])
+def show_create_account_form():
+    """Display about create account."""
+
+    return render_template("new_account.html")
+
+@app.route('/create-account', methods = ['POST'])
+def process_new_account():
+    """Create new account."""
+    fname = request.form.get('fname')
+    lname = request.form.get('lname')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    user = crud.create_user(email, password, fname, lname)
+
+    return redirect("/")
+    #psql to check
 
 @app.route("/login", methods = ['POST'])
 def process_login():
@@ -67,18 +85,9 @@ def book_location(location_id):
     departure = request.json.get("departure")
     booked_location = request.json.get("location")
 
-    #change input string to global format
-    input_date_format = "%Y-%m-%d"
-    global_data_format = "%m-%d-%Y"
-
-    arrival_datetime = datetime.strptime(arrival, input_date_format).strftime(global_data_format)
-    departure_datetime = datetime.strptime(departure, input_date_format).strftime(global_data_format)
-    print(arrival_datetime)
-    print(departure_datetime)
-
     return jsonify({
         "sucess": True,
-        "status": f"Your booking from {arrival_datetime} to {departure_datetime} in {booked_location} is confirmed!"
+        "status": f"Your booking from {crud.get_datetime_format(arrival)} to {crud.get_datetime_format(departure)} in {booked_location} is confirmed!"
     })
 
 @app.route("/book-now", methods=["GET"])
@@ -93,7 +102,7 @@ def show_profile():
     """Show user profile."""
     user = crud.get_user_by_id(session['user_id'])
 
-    return render_template("profile.html", user = user)
+    return render_template("profile.html", user = user, crud = crud)
 
 @app.route("/sign-out", methods = ['POST'])
 def sign_out_user():
@@ -109,6 +118,8 @@ def show_about():
     """Display about page."""
 
     return render_template("about.html")
+
+
 
 
 

@@ -34,6 +34,3 @@ button.addEventListener('click', () => {
     });
 });
 
-// USER LOGOUT AJAX
-
-// function userLogout()

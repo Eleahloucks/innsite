@@ -16,13 +16,16 @@ class User(db.Model): #one user has many bookings
     user_id = db.Column(db.Integer,
                         autoincrement= True,
                         primary_key=True)
+    fname = db.Column(db.String)
+    lname = db.Column(db.String)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
 
     bookings = db.relationship("Booking", back_populates="user")
+    reviews = db.relationship("Review", back_populates="user")
 
     def __repr__(self):
-        return f'<User user_id={self.user_id} email={self.email}>'
+        return f'<User user_id={self.user_id} email={self.email} fname={self.fname} lname ={self.lname}>'
 
 
 
@@ -46,7 +49,28 @@ class Booking(db.Model):
     def __repr__(self):
         return f'<Booking booking_id={self.booking_id} arrival={self.arrival} departure = {self.departure}>'
 
+#many to many relationship between users a locations, middle table that has reviews in it.
+#similar to locamen table with its own review attribute
+class Review(db.Model):
+    """a review"""
 
+    __tablename__ = "reviews"
+
+    review_id = db.Column(db.Integer, primary_key=True)
+    location_id = db.Column(db.Integer, db.ForeignKey("locations.location_id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
+    body = db.Column(db.Text, nullable=False)
+    title = db.Column(db.Text, nullable=False)
+    #should be 1-5
+    score = db.Column(db.Integer)
+
+    location = db.relationship("Location", back_populates="reviews")
+    user = db.relationship("User", back_populates="reviews")
+
+
+    def __repr__(self):
+        #what does this obj look like when I print it
+        return f"<Review id={self.review_id} title = {self.title} body ={self.body} score = {self.score}>"
 
 class Location(db.Model): #one location has many amenity per location
     """A location."""
@@ -64,8 +88,9 @@ class Location(db.Model): #one location has many amenity per location
     img = db.Column(db.String)
 
     bookings = db.relationship("Booking", back_populates="location")
+    reviews = db.relationship("Review", back_populates="location")
 
-    #set up relationship to amenities and location_amenties middle table
+    #relationship to amenities and location_amenties middle table
     amenities = db.relationship("Amenity", secondary = "location_amenities", back_populates = "locations")
 
     def __repr__(self):

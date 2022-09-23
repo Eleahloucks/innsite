@@ -1,23 +1,9 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<h1>Login to your Innsite account</h1>
 
-<h2>Create an Account</h2>
-  <form action="/users" method="POST">
-    <p>
-      Email <input type="text" name="email">
-    </p>
-
-    <p>
-      Password <input type="password" name="password">
-    </p>
-
-    <p>
-      <input type="submit">
-    </p>
-  </form>
-
-  <h2>Log In</h2>
+  <h3>Log In</h3>
   <form action="/login" method="POST">
     <p>
       Email <input type="text" name="email">
@@ -31,5 +17,7 @@
       <input type="submit">
     </p>
   </form>
+
+  <p>Don't have an account? <a href="/create-account">Create an Account</a></p>
 </html>
 {% endblock %}

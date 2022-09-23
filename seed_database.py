@@ -155,13 +155,13 @@ check_3 = get_location_by_id(3)
 
 #SAMPLE USERS
 
-user_1 = create_user('user1@email.com', "1234")
-user_2 = create_user('user2@email.com', "5678")
-user_3 = create_user('user3@email.com', "9101112")
+user_1 = create_user('user1@email.com', "1234", "Michael", "Scott")
+user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley")
+user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte")
 
-# user_check_1 = get_user_by_email('user1@email.com')
-# user_check_2 = get_user_by_email('user2@email.com')
-# user_check_3 = get_user_by_email('user3@email.com')
+user_check_1 = get_user_by_email('user1@email.com')
+user_check_2 = get_user_by_email('user2@email.com')
+user_check_3 = get_user_by_email('user3@email.com')
 
 # print(user_check_1)
 # print(user_check_2)
@@ -182,4 +182,21 @@ booking_3 = create_booking(datetime.strptime('02-21-2023', global_date_format), 
 # print(booking_check_1)
 # print(booking_check_2)
 # print(booking_check_3)
+
+#REVIEW DATA
+# def create_review(title, body, score, user_id, location_id):
+
+
+
+review_1 = create_review(title = "Amazing stay!", body = "I was so happy to spend a full two months at the Outsite house in North Boulder! ful roommates during my stay - I felt so lucky! Don't hesitate to spend time her if you love the outdoors and nature", score = 5, user_id = 1, location_id = 1)
+review_2 = create_review("Great and affordable to remote work and meet others!", "Outsite was truly a great experience. The WhatsApp group was an easy way to connect with others traveling/working in Lisbon. The accommodations are clean and kept up nicely by staff and others staying", 5, 2, 2)
+review_3 = create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 3 )
+
+review_check_1 = get_review_by_location_id(1)
+review_check_2 = get_review_by_user_id(2)
+review_check_3 = get_review_by_location_id(3)
+
+print(review_1)
+print(review_2)
+print(review_3)
 

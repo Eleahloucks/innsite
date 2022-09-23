@@ -10,7 +10,7 @@
 <div>
   {% for booking in user.bookings %}
 
-  <p> You are booked from {{ booking.arrival }} to {{ booking.departure }} at location {{ booking.location['location_title'] }}.</p>
+  <p> You are booked from {{ booking.arrival.strftime("%m-%d-%Y") }} to {{ booking.departure.strftime("%m-%d-%Y") }}  at location {{ booking.location['location_title'] }}.</p>
   {% endfor %}
 </div>
 

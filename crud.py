@@ -10,8 +10,10 @@ from datetime import datetime
   # populate content on home
   # populate content on profile
   # populate content on about
-  # put reviews on locations
-
+  #gallery
+    #make images table
+    #use cloudinary to store images - read article
+    #test out displaying images
 
 #Qs for staff
 

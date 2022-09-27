@@ -10,14 +10,11 @@
     //create route to reviews page form
     //input area form
 
+// do i want to update whole page
+// if no, what info do i need?
+//add event listener
     function ShowReviewForm() {
-      // function GetReviewInputs(){
-      //   fetch('/new-review')
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     alert(`The weather will be ${data.forecast}`);
-      //   });
-        // }
+
       return (
         <form action="/new-review" method="POST">
           <p>

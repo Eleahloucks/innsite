@@ -9,7 +9,7 @@ import crud
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-app.secret_key = "dekdjlsjflskv" # fixme
+app.secret_key = "dev" # fixme
 app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")

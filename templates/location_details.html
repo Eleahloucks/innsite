@@ -40,6 +40,12 @@
    <li>{{ amenity.amenity_title }}</li>
   {% endfor %}
 </p>
+<div id = 'location-review'>
+  <h3>Reviews</h3>
+  <p> {{ reviews.score }} stars</p>
+  <p> <b>{{ reviews.title }}</b> </p>
+  <p> {{ reviews.body }} </p>
+</div>
 
 <a href = '/locations'> See all Locations </a>
 

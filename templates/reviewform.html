@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% block title %}Innsite{% endblock %}
+
+{% block body %}
+<h1>Work anywhere. Live differently.</h1>
+<p>Please share your experience:</p>
+<div id="review-form"></div>
+
+<ul>
+  <li><a href="/locations">View all locations</a></li>
+</ul>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+<script type="text/jsx" src="/static/js/reviews.jsx"></script>
+{% endblock %}

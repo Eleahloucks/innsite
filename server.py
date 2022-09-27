@@ -74,7 +74,9 @@ def process_login():
 def location_details(location_id):
     """Show details of a location."""
     location = crud.get_location_by_id(location_id)
-    return render_template("location_details.html", location = location)
+    reviews = crud.get_review_by_location_id(location_id)
+
+    return render_template("location_details.html", location = location, reviews = reviews)
 
 
 @app.route("/locations/<location_id>", methods = ['POST'])
@@ -119,6 +121,28 @@ def show_about():
 
     return render_template("about.html")
 
+@app.route('/new-review')
+def show_review_form():
+    """Display review form template."""
+    all_locations = crud.get_all_locations()
+
+
+    return render_template("reviewform.html", all_locations = all_locations)
+
+
+@app.route("/new-review", methods = ['POST'])
+def new_review():
+    """Write a review."""
+    name = request.form.get("name")
+    email = request.form.get("email")
+    location = request.form.get("location")
+    rating = request.form.get("score")
+    title = request.form.get("title")
+    body = request.form.get("body")
+
+    flash("Thank you for your feedback!")
+
+    return redirect("/")
 
 
 

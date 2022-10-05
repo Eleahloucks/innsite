@@ -1,29 +1,37 @@
 """CRUD operations."""
-from model import db, User, Location, Booking, Amenity, LocationAmenity, Review, connect_to_db
+from model import db, User, Location, Booking, Amenity, LocationAmenity, Review, Image, connect_to_db
 from datetime import datetime
+
+#CRUD - created helper functions that manage operations of create read update and delete. Doesnt have to be named crud.
+
+
 #MVP - Innsite
 # Guests can see the amenities and locations where they can book - DONE
 # When booking they will be asked to create login so they have confirmation of booking - Done
 # Home and about pages will have photos and information about why they should work and travel and where. - DONE
 
 #TODAY -
+#features
+  #allow user to upload profile photo -
+
+
+  #nice to haves - search within site
+  #newsletter subscribe button
+#design
+  # use cards on booking page
+  # Update content on profile
   # populate content on home
-  # populate content on profile
   # populate content on about
-  #gallery
-    #make images table
-    #use cloudinary to store images - read article
-    #test out displaying images
+  # add a site footer
+  # spend t
 
 #Qs for staff
 
 #GENERAL Q's for myself
 
 #AFTER MVP
-  #1 create review feature in react - might need to make a form in react
-  #make gallery class that is one to many with location,
-    #each main photo will be the main phot and galleries will show on each locaton detail page
-
+  #css styling
+  #style components
   #add capacity feature
     #store capacity in location class
     #create crud function to
@@ -33,10 +41,10 @@ from datetime import datetime
   #make SQL locations and amenitites dump file
 
 #USER FUNCTIONS
-def create_user(email, password, fname, lname):
+def create_user(email, password, fname, lname, img):
     """Create and return a new user."""
 
-    user = User(email=email, password=password, fname = fname, lname = lname)
+    user = User(email=email, password=password, fname = fname, lname = lname, img = img)
     db.session.add(user)
     db.session.commit()
 
@@ -98,10 +106,26 @@ def get_location_by_id(location_id):
 
   return Location.query.get(location_id)
 
-#store capacity in location
-#query bookings table for records with location id and
-  #arrival and departure dates that overlap
-  # select all from bookings where loc id = location 1 and arrival date is less that date a and/or departure date is greater than date b
+#IMAGE FUNCTIONS
+
+def create_image(location_id, img_src, img_tag):
+  """Create a image instance."""
+
+  image = Image(location_id = location_id, img_src = img_src, img_tag = img_tag)
+  db.session.add(image)
+  db.session.commit()
+
+  return image
+
+def create_gallery(location_id, img_src_list, img_tag):
+  """create a gallery from list"""
+  gallery = []
+  for img in img_src_list:
+    gallery.append(Image(location_id = location_id, img_src = img, img_tag = img_tag))
+
+  db.session.add_all(gallery)
+  db.session.commit()
+  return gallery
 
 
 #BOOKING FUNCTIONS

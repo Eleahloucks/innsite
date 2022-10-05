@@ -2,10 +2,9 @@
 {% block title %}Work Travel Co-Living Home{% endblock %}
 
 {% block body %}
-  <h1>Welcome {{user.email}}!</h1>
-  <h2>Here is your password {{user.password}}!</h1>
+  <h1>Welcome {{user.fname}}!</h1>
 
-
+  <h2> My Bookings:</h2>
 
 <div>
   {% for booking in user.bookings %}
@@ -13,6 +12,38 @@
   <p> You are booked from {{ booking.arrival.strftime("%m-%d-%Y") }} to {{ booking.departure.strftime("%m-%d-%Y") }}  at location {{ booking.location['location_title'] }}.</p>
   {% endfor %}
 </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3> Leave a <a href="/new-review">Review</a></h3>
 
 <form action = "/sign-out" method="POST">
   <div>

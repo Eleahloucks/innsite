@@ -8,12 +8,20 @@ from datetime import datetime
 import crud
 import model
 import server
+import cloudinary.uploader
+import os
+
+CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
+CLOUDINARY_SECRET = os.environ['CLOUDINARY_SECRET']
+CLOUD_NAME = 'doqa1yq0d'
 
 
 from crud import *
 connect_to_db(server.app)
 db.drop_all()
 db.create_all()
+
+
 
 
 ## run this when i make changes to model or crud to make sure they are working
@@ -155,13 +163,13 @@ check_3 = get_location_by_id(3)
 
 #SAMPLE USERS
 
-user_1 = create_user('user1@email.com', "1234", "Michael", "Scott")
-user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley")
-user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte")
+user_1 = create_user('user1@email.com', "1234", "Michael", "Scott", "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
+user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley",  "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
+user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte",  "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
 
-user_check_1 = get_user_by_email('user1@email.com')
-user_check_2 = get_user_by_email('user2@email.com')
-user_check_3 = get_user_by_email('user3@email.com')
+# user_check_1 = get_user_by_email('user1@email.com')
+# user_check_2 = get_user_by_email('user2@email.com')
+# user_check_3 = get_user_by_email('user3@email.com')
 
 # print(user_check_1)
 # print(user_check_2)
@@ -191,12 +199,124 @@ booking_3 = create_booking(datetime.strptime('02-21-2023', global_date_format), 
 review_1 = create_review(title = "Amazing stay!", body = "I was so happy to spend a full two months at the Outsite house in North Boulder! ful roommates during my stay - I felt so lucky! Don't hesitate to spend time her if you love the outdoors and nature", score = 5, user_id = 1, location_id = 1)
 review_2 = create_review("Great and affordable to remote work and meet others!", "Outsite was truly a great experience. The WhatsApp group was an easy way to connect with others traveling/working in Lisbon. The accommodations are clean and kept up nicely by staff and others staying", 5, 2, 2)
 review_3 = create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 3 )
+review_4 = create_review(title = "Amazing stay!", body = "I was so happy to spend a full two months at the Outsite house in North Boulder! ful roommates during my stay - I felt so lucky! Don't hesitate to spend time her if you love the outdoors and nature", score = 5, user_id = 1, location_id = 4)
+review_5 = create_review("Great and affordable to remote work and meet others!", "Outsite was truly a great experience. The WhatsApp group was an easy way to connect with others traveling/working in Lisbon. The accommodations are clean and kept up nicely by staff and others staying", 5, 2, 5)
+review_6= create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 6 )
+review_7 = create_review(title = "Amazing stay!", body = "I was so happy to spend a full two months at the Outsite house in North Boulder! ful roommates during my stay - I felt so lucky! Don't hesitate to spend time her if you love the outdoors and nature", score = 5, user_id = 1, location_id = 7)
+review_8 = create_review("Great and affordable to remote work and meet others!", "Outsite was truly a great experience. The WhatsApp group was an easy way to connect with others traveling/working in Lisbon. The accommodations are clean and kept up nicely by staff and others staying", 5, 2, 8)
+review_9 = create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 9 )
+review_10 = create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 10 )
 
-review_check_1 = get_review_by_location_id(1)
-review_check_2 = get_review_by_user_id(2)
-review_check_3 = get_review_by_location_id(3)
 
-print(review_1)
-print(review_2)
-print(review_3)
 
+
+# review_check_1 = get_review_by_location_id(1)
+# review_check_2 = get_review_by_user_id(2)
+# review_check_3 = get_review_by_location_id(3)
+# review_check_1 = get_review_by_location_id(4)
+# review_check_2 = get_review_by_user_id(5)
+# review_check_3 = get_review_by_location_id(6)
+# review_check_1 = get_review_by_location_id(7)
+# review_check_2 = get_review_by_user_id(8)
+# review_check_3 = get_review_by_location_id(9)
+# review_check_1 = get_review_by_location_id(10)
+
+# print(review_1)
+# print(review_2)
+# print(review_3)
+# print(review_4)
+# print(review_5)
+# print(review_6)
+# print(review_7)
+# print(review_8)
+# print(review_9)
+# print(review_10)
+
+
+
+
+#IMAGES DATA
+
+#implent cloudinary
+cloudinary.config(
+  cloud_name = CLOUD_NAME,
+  api_key = CLOUDINARY_KEY,
+  api_secret = CLOUDINARY_SECRET,
+  secure = True
+)
+
+
+#write a function grab img by tag returns an array of img info by tag - seed
+def grab_img_by_tag(img_tag):
+  """create a gallery with a list of img urls by tag"""
+  gallery = []
+  tag_json_obj = cloudinary.Search().expression(f'tags=#{img_tag}').execute()
+  img_one = tag_json_obj['resources'][0]['secure_url']
+  img_two = tag_json_obj['resources'][1]['secure_url']
+  img_three = tag_json_obj['resources'][2]['secure_url']
+  img_four = tag_json_obj['resources'][3]['secure_url']
+  img_five = tag_json_obj['resources'][4]['secure_url']
+
+  gallery = [img_one, img_two, img_three, img_four, img_five]
+  return gallery
+
+
+#create location galleries
+boulder_gallery = create_gallery(location_id = 1,
+                                img_src_list = grab_img_by_tag("boulder_gallery"),
+                                img_tag = "boulder_gallery")
+
+lisbon_gallery = create_gallery(location_id = 2,
+                                img_src_list = grab_img_by_tag("lisbon"),
+                                img_tag = "lisbon")
+
+sanfrancisco_gallery = create_gallery(location_id = 3,
+                                img_src_list = grab_img_by_tag("sanfrancisco"),
+                                img_tag = "sanfrancisco")
+manhattan_gallery = create_gallery(location_id = 4,
+                                img_src_list = grab_img_by_tag("manhattan"),
+                                img_tag = "manhattan")
+
+puertorico_gallery = create_gallery(location_id = 5,
+                                img_src_list = grab_img_by_tag("puertorico"),
+                                img_tag = "puertorico")
+
+morocco_gallery = create_gallery(location_id = 6,
+                                img_src_list = grab_img_by_tag("morocco"),
+                                img_tag = "morocco")
+
+france_gallery = create_gallery(location_id = 7,
+                                img_src_list = grab_img_by_tag("france"),
+                                img_tag = "france")
+
+bali_gallery = create_gallery(location_id = 8,
+                                img_src_list = grab_img_by_tag("bali"),
+                                img_tag = "bali")
+
+canary_gallery = create_gallery(location_id = 9,
+                                img_src_list = grab_img_by_tag("canary"),
+                                img_tag = "canary")
+
+costarica_gallery = create_gallery(location_id = 10,
+                                img_src_list = grab_img_by_tag("costarica"),
+                                img_tag = "costarica")
+#print galleries
+print(boulder_gallery)
+
+
+
+
+
+
+#write another create image function - crud
+#result is json, inside is a key with an array of image info
+  #it cam be itereated through to get the secure url
+  #put info into db
+#result = cloudinary.Search().execute()
+# result = cloudinary.Search().expression('tags=#boulder_gallery').execute()
+# dict = result['resources']
+# first_one = result['resources'][0]['secure_url']
+
+# print(dict)
+
+#

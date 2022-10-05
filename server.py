@@ -5,8 +5,18 @@ from flask import (Flask, render_template, request, flash, session,
 from datetime import datetime
 from model import connect_to_db, db
 import crud
+import cloudinary.uploader
+import os
+
+CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
+CLOUDINARY_SECRET = os.environ['CLOUDINARY_SECRET']
+CLOUD_NAME = 'doqa1yq0d'
 
 from jinja2 import StrictUndefined
+
+#imports form model and crud
+#responds to http requests, each route has a view function that may call for data from db and will either return a template or json
+#some routes handle post requests
 
 app = Flask(__name__)
 app.secret_key = "dev" # fixme
@@ -43,7 +53,8 @@ def process_new_account():
     lname = request.form.get('lname')
     email = request.form.get('email')
     password = request.form.get('password')
-    user = crud.create_user(email, password, fname, lname)
+    img= request.files['my-file']
+    user = crud.create_user(email, password, fname, lname, img)
 
     return redirect("/")
     #psql to check
@@ -68,7 +79,14 @@ def process_login():
     else:
         flash('Not logged in!')
     return render_template("login.html")
-
+#main code server and crud
+    #write crud function get images by location_id same as tag
+    #use img source url to render in html template
+        #for img in images
+        #img src = img
+    #write for loop that holds img sources, pass to template and render it.
+#getting info in db
+    #seed db with image info
 
 @app.route("/locations/<location_id>")
 def location_details(location_id):
@@ -143,6 +161,15 @@ def new_review():
     flash("Thank you for your feedback!")
 
     return redirect("/")
+
+@app.route('/test')
+def show_test(location_id = 1):
+    """Display test page."""
+    location = crud.get_location_by_id(location_id)
+    reviews = crud.get_review_by_location_id(location_id)
+
+    return render_template("test.html", location = location, reviews = reviews)
+
 
 
 

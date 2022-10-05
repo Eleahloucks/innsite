@@ -6,7 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 db = SQLAlchemy()
 
-
+#this table defines the tables in an obj oriented way.
+# it outlines each table and the fields that exist for each
 
 class User(db.Model): #one user has many bookings
     """A user."""
@@ -20,6 +21,7 @@ class User(db.Model): #one user has many bookings
     lname = db.Column(db.String)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
+    img = db.Column(db.String)
 
     bookings = db.relationship("Booking", back_populates="user")
     reviews = db.relationship("Review", back_populates="user")
@@ -87,6 +89,7 @@ class Location(db.Model): #one location has many amenity per location
     # capacity = db.Column(db.Integer)
     img = db.Column(db.String)
 
+    images = db.relationship("Image", back_populates="location")
     bookings = db.relationship("Booking", back_populates="location")
     reviews = db.relationship("Review", back_populates="location")
 
@@ -96,6 +99,23 @@ class Location(db.Model): #one location has many amenity per location
     def __repr__(self):
         return f'<Location location_id={self.location_id} location_title={self.location_title} price={self.price} amenities= {self.amenities}>'
 
+class Image(db.Model): #many images for one location
+    """A image."""
+
+    __tablename__ = 'images'
+
+    image_id = db.Column(db.Integer,
+                        autoincrement= True,
+                        primary_key=True)
+    location_id = db.Column(db.Integer, db.ForeignKey("locations.location_id"))
+    img_src = db.Column(db.String)
+    img_tag = db.Column(db.String)
+
+    #set up relationship to locations and image table
+    location = db.relationship("Location", back_populates="images")
+
+    def __repr__(self):
+        return f'<Image image_id={self.image_id} img_src={self.img_src}>'
 
 
 class Amenity(db.Model): #one amenity is related to a location with many amenities

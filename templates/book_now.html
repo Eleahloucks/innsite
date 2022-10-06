@@ -8,20 +8,29 @@
 {% endblock %}
 
 {% block body %}
+
 <h1>Book a Location</h1>
 <h2>See our locations around the world:</h2>
 
-<ul>
-{% for location in locations %}
-   <li><a href="locations/{{location.location_id}}">{{location.location_title}}</a> </li>
-{% endfor %}
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <ul>
+        {% for location in locations %}
+          <li><a href="locations/{{location.location_id}}">{{location.location_title}}</a> </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-6">
+        <div id="map" style="width: 50%; height: 100%; position: absolute;"></div>
+        <section class="map">
+           <div id="map"></div>
+        </section>
+    </div>
+  </div>
+</div>
 
-<div id="map" style="width: 50%; height: 100%; position: absolute;"></div>
 
-<section class="map">
-   <div id="map"></div>
-</section>
 
 <script src="/static/js/map.js"></script>
 <script

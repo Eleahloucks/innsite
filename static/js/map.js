@@ -9,26 +9,27 @@ function initMap() {
     lng: -39.811884909459955,
   };
 
-  const basicMap = new google.maps.Map(document.querySelector('#map'), {
+  const basicMap = new google.maps.Map(document.getElementById("map"), {
+    mapId: "be3dc13126e8bb95",
     center: atlanticCoords,
-    zoom: 1,
+    zoom: 2,
   });
 
-  const atlanticMarker = new google.maps.Marker({
-    position: atlanticCoords,
-    title: 'Atlantic',
-    map: basicMap,
-  });
+  // const atlanticMarker = new google.maps.Marker({
+  //   position: atlanticCoords,
+  //   title: 'Atlantic',
+  //   map: basicMap,
+  // });
 
-  atlanticMarker.addListener('click', () => {
-    alert('Hi!');
-  });
+  // atlanticMarker.addListener('click', () => {
+  //   alert('Hi!');
+  // });
 
   const atlanticInfo = new google.maps.InfoWindow({
-    content: '<h1>atlantic!</h1>',
+    // content: '<h1>atlantic!</h1>',
   });
 
-  atlanticInfo.open(basicMap, atlanticMarker);
+  atlanticInfo.open(basicMap, atlanticCoords);
 
   const locations = [
     {
@@ -112,7 +113,7 @@ function initMap() {
         map: basicMap,
         icon: {
           // custom icon
-          url: '/static/img/marker.svg',
+          url: '/static/img/new_marker.svg',
           scaledSize: {
             width: 30,
             height: 30,

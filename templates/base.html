@@ -3,7 +3,6 @@
   <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +29,7 @@
               </div>
               <div class="navbar-nav">
                 {% if 'email' in session %}
-                <a class="nav-link" href="/profile"> <img class="log-in">{{session['email']}}</a>
+                <a class="nav-link" href="/profile"> <img class="log-in">Hi, {{session['email']}}</a>
                 {% else %}
                 <a class="nav-link" href="/login"> <img class="log-in">Log In</a>
                 {% endif %}
@@ -55,7 +54,7 @@
       <footer class="py-5">
         <div class="row">
           <div class="col-2">
-            <h5> Section</h5>
+            <h5> Product</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
@@ -66,7 +65,7 @@
           </div>
 
           <div class="col-2">
-            <h5>Section</h5>
+            <h5>Company</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
@@ -77,13 +76,17 @@
           </div>
 
           <div class="col-2">
-            <h5>Section</h5>
+            <h5>Connect</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="/login" class="nav-link p-0 text-muted">Login</a></li>
+              <li class="nav-item mb-2"><a href="/create-account" class="nav-link p-0 text-muted">Create Account</a></li>
+              <form action = "/sign-out" method="POST">
+                <div>
+                  <input type="text" value = "Sign Out" />
+                </div>
+              </form>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sign Out</a></li>
             </ul>
           </div>
 

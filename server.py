@@ -53,7 +53,11 @@ def process_new_account():
     lname = request.form.get('lname')
     email = request.form.get('email')
     password = request.form.get('password')
-    img= request.files['my-file']
+    photo= request.files['my-file']
+
+    cloudinary_request = cloudinary.uploader.upload(photo, cloud_name = CLOUD_NAME, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET)
+    img = cloudinary_request['secure_url']
+
     user = crud.create_user(email, password, fname, lname, img)
 
     return redirect("/")
@@ -73,6 +77,8 @@ def process_login():
     elif potential_user.password == input_password:
         session['user_id'] = potential_user.user_id
         session['email'] = potential_user.email
+        session['fname'] = potential_user.fname
+
         flash('Logged in!')
         return redirect("/locations")
     #user was found but pw didnt match

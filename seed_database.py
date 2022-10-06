@@ -167,13 +167,13 @@ user_1 = create_user('user1@email.com', "1234", "Michael", "Scott", "https://res
 user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley",  "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
 user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte",  "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
 
-# user_check_1 = get_user_by_email('user1@email.com')
-# user_check_2 = get_user_by_email('user2@email.com')
-# user_check_3 = get_user_by_email('user3@email.com')
+user_check_1 = get_user_by_email('user1@email.com')
+user_check_2 = get_user_by_email('user2@email.com')
+user_check_3 = get_user_by_email('user3@email.com')
 
-# print(user_check_1)
-# print(user_check_2)
-# print(user_check_3)
+print(user_check_1)
+print(user_check_2)
+print(user_check_3)
 
 #SAMPLE BOOKINGS
 

@@ -3,13 +3,18 @@
     position:relative;
 
 }
-#map{
-    overflow:hidden;
-    padding-bottom:50%;
-    height:0;
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+#map_screen > .row {
+    min-height: 100vh;
+}
+
+.flex-fill {
+    flex:1 1 auto;
 }

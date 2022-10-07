@@ -10,35 +10,44 @@ from datetime import datetime
 # When booking they will be asked to create login so they have confirmation of booking - Done
 # Home and about pages will have photos and information about why they should work and travel and where. - DONE
 
+
 #TODAY -
-#features
-  #allow user to upload profile photo -
 
-
-  #nice to haves - search within site
-  #newsletter subscribe button
-#design
-  # use cards on booking page
-  # Update content on profile
-  # populate content on home
-  # populate content on about
-  # add a site footer
-  # spend t
 
 #Qs for staff
+
+#style Q's
+  #can i have global styling for
+    #font - make my own h1, h2, h3 etc and
+      #i want DM serif display
+    #text colors?
+    #button style?
+
+#STYLING TO DO
+  #quickly finish header and footer basics and
+    #move new header and footer over to base
+  #add favicon
+  #add logo to nav - source https://app.logo.com/dashboard/logo_3641e071-7aef-4d89-9d2b-cdaf46ebb4b5/your-logo-files
+  #add logo to footer
+  #add content and photo's to home page
+  #add content and
+
+#STYLE FOR LATER
+  #fix footer font colors
+  #make footer sign out work
+
+
 
 #GENERAL Q's for myself
 
 #AFTER MVP
-  #css styling
-  #style components
-  #add capacity feature
+  #add capacity feature - DECIDED NOT TO DO
     #store capacity in location class
     #create crud function to
       #query bookings table for records with location id
         # show arrival and departure dates that overlap
         # select all from bookings where loc id = location 1 and arrival date is less that date a and/or departure date is greater than date b
-  #make SQL locations and amenitites dump file
+  #make SQL locations and amenitites dump file - DECIDED NOT TO DO
 
 #USER FUNCTIONS
 def create_user(email, password, fname, lname, img):

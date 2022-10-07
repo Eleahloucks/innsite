@@ -9,8 +9,8 @@ function initMap() {
     lng: -39.811884909459955,
   };
 
-  const basicMap = new google.maps.Map(document.getElementById("map"), {
-    mapId: "be3dc13126e8bb95",
+  const basicMap = new google.maps.Map(document.getElementById('map'), {
+    mapId: "751009d2f3e936a",
     center: atlanticCoords,
     zoom: 2,
   });

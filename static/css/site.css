@@ -1,3 +1,246 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/ibm-plex-sans.min.css");
+
+h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.953em;
+  font-weight: 500 !important;
+  color: #2e2c2b;
+}
+
+h4 {
+  color: #5b5856;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: .75rem;
+  line-height: 1rem;
+  letter-spacing: .18em;
+  color: #5b5856;
+}
+
+p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 200;
+  letter-spacing: .0015em;
+}
+.navbar{
+  padding-right: 5% !important;
+  padding-left: 4% !important;
+  padding-top: 0% !important;
+  padding-bottom: 0% !important;
+}
+.nav-buttons-2020.desktop {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.navigation-link-2022.big {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  margin-top: 0;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  padding: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: none;
+}
+.navigation-link-2022 {
+  font-family: 'IBM Plex Sans',sans-serif;
+  color: #222;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.w-nav-link{
+  position: relative;
+  text-align: left
+}
+.navigation-button {
+  text-transform: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 36px;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #2e2c2b;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+  color: #fffeff;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: .125px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.btn:hover{
+  border: 2px solid rgba(0,160,80,0);
+}
+
+.innsite-button-navy{
+
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #101726;
+  transition: background-color 250ms;
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .005em;
+}
+.innsite-button-green{
+
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #4C6353;
+  transition: background-color 250ms;
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .005em;
+}
+.innsite-button-ivory{
+
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #D9BBA9;
+  transition: background-color 250ms;
+  color: #1c2727;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .005em;
+}
+.innsite-button-light{
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #898481;
+  border-radius: 50px;
+  background-color: rgba(255,255,255,0);
+  -webkit-transition: background-color 250ms;
+  transition: background-color 250ms;
+  color: #2e2c2b;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .005em;
+}
+.innsite-button-test{
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 10rem;
+    padding: 0.75rem 1.5rem;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #8cc4c1;
+    -webkit-transition: background-color 250ms;
+    transition: background-color 250ms;
+    color: #1c2727;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .005em;
+}
+._w-100 {
+  width: 100%;
+}
+
 .card-img-top {
   width: 100%;
   height: 15vw;
@@ -7,13 +250,25 @@
 .card-deck {
   flex-wrap: wrap;
 }
+.placeholder{
+  color: #FFFFFF;
+}
 
+/* visited link */
+#footer-text li a:visited {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #D9BBA9 !important;
+  /* font-size: 1.25rem;
+  font-weight: 200;
+  letter-spacing: .0015em; */
+}
+
+/* mouse over link */
+#footer-text li a:hover {
+  color: #73303C !important;
+}
 
 footer {
   color: #D9BBA9;
   }
-
-.footer-text {
-  color: #D9BBA9;
-}
 

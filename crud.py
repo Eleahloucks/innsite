@@ -17,6 +17,7 @@ from datetime import datetime
 #Qs for staff
 
 #style Q's
+  #fix navbar email to fname
   #can i have global styling for
     #font - make my own h1, h2, h3 etc and
       #i want DM serif display
@@ -24,10 +25,10 @@ from datetime import datetime
     #button style?
 
 #STYLING TO DO
-  #quickly finish header and footer basics and
+  #quickly finish header and footer basics and - done
     #move new header and footer over to base
-  #add favicon
-  #add logo to nav - source https://app.logo.com/dashboard/logo_3641e071-7aef-4d89-9d2b-cdaf46ebb4b5/your-logo-files
+  #add favicon - done
+  #add logo to nav done - source https://app.logo.com/dashboard/logo_3641e071-7aef-4d89-9d2b-cdaf46ebb4b5/your-logo-files
   #add logo to footer
   #add content and photo's to home page
   #add content and

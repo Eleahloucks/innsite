@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>Login to your Innsite account</h1>
+<div class="page-wrapper">
+  <!-- home banner -->
+  <div class="home-banner-section wf-section">
+    <div class="w-layout-grid banner-grid">
+      <div id="w-node-d52a46ce-0d31-e1b0-01db-283ed97addc6-4d35f4d9" class="hero-2020-text-block">
+        <h1>Login to your Innsite account</h1>
+        <form action="/login" method="POST">
+          <h4>
+            Email <input type="text" class="text-base" name="email">
+          </h4>
 
-  <h3>Log In</h3>
-  <form action="/login" method="POST">
-    <p>
-      Email <input type="text" name="email">
-    </p>
+          <h4>
+            Password <input type="password" name="password">
+          </h4>
 
-    <p>
-      Password <input type="password" name="password">
-    </p>
+          <h4>
+            <input type="submit" class="btn btn-rounded innsite-button-green" value="Sign-In">
+          </h4>
+        </form>
+        <p>Don't have an account? <a href="/create-account">Create an Account</a></p>
+      </div>
+      <div class="login-banner-image"></div>
+    </div>
+  </div>
+</div>
 
-    <p>
-      <input type="submit">
-    </p>
-  </form>
-
-  <p>Don't have an account? <a href="/create-account">Create an Account</a></p>
-</html>
 {% endblock %}

@@ -8,19 +8,19 @@ h1 {
 }
 
 h4 {
-  color: #5b5856;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 300;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  color: #5b5856 !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  font-weight: 300 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
 }
 
 h5 {
-  font-size: .75rem;
-  line-height: 1rem;
-  letter-spacing: .18em;
-  color: #5b5856;
+  font-size: .75rem !important;
+  line-height: 1rem !important;
+  letter-spacing: .18em !important;
+  color: #5b5856 !important;
 }
 
 p {
@@ -29,6 +29,18 @@ p {
   font-weight: 200;
   letter-spacing: .0015em;
 }
+a {
+  color:#D9BBA9 !important;
+}
+
+a:hover{
+  color:#4C6353 !important;
+}
+
+.full-width {
+  margin: 0px !important;
+}
+
 .navbar{
   padding-right: 5% !important;
   padding-left: 4% !important;
@@ -40,43 +52,22 @@ p {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
 .navigation-link-2022.big {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   height: 70px;
   margin-top: 0;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   padding: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   border-radius: 5px;
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: .2s;
   transition-duration: .2s;
   font-size: 14px;
   line-height: 16px;
@@ -85,7 +76,7 @@ p {
 }
 .navigation-link-2022 {
   font-family: 'IBM Plex Sans',sans-serif;
-  color: #222;
+  color: #222 !important;
   font-size: 10px;
   line-height: 12px;
   font-weight: 500;
@@ -109,19 +100,11 @@ p {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0 20px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   border-radius: 25px;
   background-color: #2e2c2b;
-  -webkit-transition-property: background-color;
   transition-property: background-color;
-  -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
   color: #fffeff;
   font-size: 13px;
@@ -155,19 +138,19 @@ p {
 }
 .innsite-button-green{
 
-  display: flex;
-  min-width: 10rem;
-  padding: 0.75rem 1.5rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  background-color: #4C6353;
-  transition: background-color 250ms;
-  color: #FFFFFF;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 500;
-  letter-spacing: .005em;
+  display: flex !important;
+  min-width: 10rem !important;
+  padding: 0.75rem 1.5rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 50px !important;
+  background-color: #4C6353 !important;
+  transition: background-color 250ms !important;
+  color: #FFFFFF !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  font-weight: 500 !important;
+  letter-spacing: .005em !important;
 }
 .innsite-button-ivory{
 
@@ -202,23 +185,13 @@ p {
   letter-spacing: .005em;
 }
 .innsite-button-test{
-  display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     min-width: 10rem;
     padding: 0.75rem 1.5rem;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     border-radius: 50px;
     background-color: #8cc4c1;
-    -webkit-transition: background-color 250ms;
     transition: background-color 250ms;
     color: #1c2727;
     font-size: 1rem;
@@ -226,10 +199,56 @@ p {
     font-weight: 500;
     letter-spacing: .005em;
 }
+.press-desktop {
+  width: 100%
+}
+.press-bar {
+  position: static;
+  z-index: 999;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px #ededed;
+  border-bottom: 1px #ededed;
+  background-color: #fff;
+}
+
 ._w-100 {
   width: 100%;
 }
 
+.location-list-wrapper {
+  display: block;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.location-card__cover-img {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding-top: 62%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.location-card__item {
+  width: 25%;
+  margin-bottom: 1.5rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  cursor: pointer;
+}
+.location-card__columns {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
 .card-img-top {
   width: 100%;
   height: 15vw;
@@ -239,9 +258,269 @@ p {
 .card-deck {
   flex-wrap: wrap;
 }
+/* body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: 'IBM Plex Sans',sans-serif;
+  color: #5b5856;
+  font-size: 1rem;
+  line-height: 1.5rem;
+} */
+.page-wrapper{
+  margin: 0;
+}
 .placeholder{
   color: #FFFFFF;
 }
+.w-layout-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+.home-banner-image {
+  width: 105%;
+  height: 100%;
+  margin-left: -5%;
+  overflow: hidden;
+  background-image: url("https://global-uploads.webflow.com/5ab14126edfae6905fd3ff69/61029177cbc3ae56e0e27715_Hero%20(1).jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-2020-text-block {
+  padding: 100px 10%;
+  grid-column-gap: 0px;
+  grid-template-rows: auto;
+}
+.home-banner-section {
+  position: static;
+  z-index: 999;
+  display: flex;
+  height: 90vh;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: center;
+  background-color: #fff;
+}
+.btn-outlined--black {
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #898481 !important;
+  border-radius: 50px !important;
+  background-color: rgba(255,255,255,0) !important;
+  transition: background-color 250ms !important;
+  color: #2e2c2b !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  font-weight: 500 !important;
+  letter-spacing: .005em !important;
+  text-decoration: none !important;
+}
+.hero-btns-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 28rem;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.banner-grid {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  align-content: stretch;
+  grid-column-gap: 0px;
+  grid-template-rows: auto;
+  background-color: #fffeff;
+}
+
+.section.two-paddings {
+  padding-bottom: 7.5rem;
+}
+
+.section {
+  position: relative;
+  padding-top: 7.5rem;
+}
+.regular-section-2020 {
+  padding: 5rem 10%;
+}
+.regular-section-2020.cta-section-2020 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: #f7f5f5;
+  background-image: linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.6)),url(https://global-uploads.webflow.com/5ab14126edfae6905fd3ff69/5ece9b1d3b049ef0e6e330d3_Cliffside.jpg);
+  background-position: 0 0,50% 50%;
+  background-size: auto,cover;
+}
+
+.btn-solid--white {
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #fff;
+  transition: background-color 250ms !important;
+  color: #2e2c2b !important;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .005em;
+}
+
+.btn-outlined--white {
+  display: flex;
+  min-width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid hsla(0,0%,100%,.75);
+  border-radius: 50px;
+  background-color: rgba(255,255,255,0);
+  transition: background-color 250ms;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: .005em;
+}
+.cta-section__heading {
+  color: #fff;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.cta-text-div-2020 {
+  padding-right: 15%;
+  padding-left: 15%;
+  text-align: center;
+  margin-top: 0
+}
+.cta-section__btn-wrapper {
+  display: flex;
+  max-width: 42rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+  justify-content: center;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  text-align: center;
+}
+/* BOOKING PAGE */
+.locations-explorer__list {
+  position: relative;
+  display: flex;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.locations-explorer__item {
+  width: 50%;
+  margin-bottom: 2rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+.locations-explorer__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+/* LOGIN  */
+.login-banner-image {
+  width: 105%;
+  height: 100%;
+  margin-left: -5%;
+  overflow: hidden;
+  background-image: url("https://app.outsite.co/static/media/persona.a7b0d5050d9c077ca34e.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.text-base {
+  font-size: 1rem;
+  letter-spacing: .005em;
+  line-height: 1.5rem;
+}
+/* styles: location/<location_id> */
+.gradient {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(77deg,rgba(0,0,0,.5) 44%,transparent 83%);
+}
+.make-white{
+  color:white !important;
+}
+
+.layout-2-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.col-1-of-2 {
+    width: 50%;
+    margin-right: 0.75rem;
+    align-items: center;
+}
+.col-2-of-2 {
+  width: 50%;
+  margin-left: 0.75rem;
+  align-items: center;
+}
+.booking-form-locations-wrapper {
+  position: relative;
+  z-index: 1000;
+  max-width: 25rem;
+  margin-left: auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 1px 1px 15px 0 rgb(0 0 0 / 10%);
+}
+.arrival-departure-input {
+  border: none;
+  background-color: transparent;
+  color: #2E2C2B;
+}
+.bg-image {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+.amenity-tile {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(34,34,34,.12);
+  border-radius: 0.25rem;
+  color: rgba(34,34,34,.75);
+  line-height: 1.5rem;
+}
+
+/* footer */
 .dark-section-footer {
   position: relative;
   z-index: 999;
@@ -289,16 +568,6 @@ p {
   padding-right: 10%;
 }
 
-.w-layout-grid {
-  margin-left: auto;
-  display: -ms-grid;
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  grid-row-gap: 16px;
-  grid-column-gap: 16px;
-}
 .footer-grid-4 {
   grid-column-gap: 20px;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
@@ -322,12 +591,12 @@ p {
 }
 
 .headline {
-  color: #D9BBA9;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  font-weight: 400;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  color: #D9BBA9 !important;
+  font-size: 1.1rem !important;;
+  line-height: 1.5rem !important;;
+  font-weight: 400 !important;;
+  letter-spacing: .12em !important;;
+  text-transform: uppercase !important;;
 }
 .footer-testimonial-columns {
   display: flex;
@@ -417,7 +686,6 @@ p {
   border-style: none;
   border-bottom-width: 6px;
   border-bottom-color: #62cee3;
-  -webkit-transition: .2s;
   transition: .2s;
   font-family: 'IBM Plex Sans',sans-serif;
   color: #D9BBA9;

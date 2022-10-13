@@ -3,26 +3,28 @@
 {% block title %}Locations{% endblock %}
 
 {% block body %}
-<span class="placeholder col-12 bg-light"></span>
-<span class="placeholder col-12 bg-light"></span>
-<span class="placeholder col-12 bg-light"></span>
-<h1>Innsite Coliving Locations</h1>
-<p>Discover Outsite Spaces in urban, coastal or alpine locations around the world.</p>
-<button type="button" class="btn-rounded innsite-button-ivory">Become a Member</button>
-<span class="placeholder col-12 bg-light"></span>
-<span class="placeholder col-12 bg-light"></span>
-<span class="placeholder col-12 bg-light"></span>
+<div class="page-wrapper container">
+   <span class="placeholder col-12"></span>
+   <span class="placeholder col-12"></span>
+   <span class="placeholder col-12"></span>
+   <h1>Innsite Coliving Locations</h1>
+   <p>Discover Outsite Spaces in urban, coastal or alpine locations around the world.</p>
+   <button type="button" class="btn btn-rounded innsite-button-green">Become a Member</button>
+   <span class="placeholder col-12"></span>
+   <span class="placeholder col-12"></span>
+   <span class="placeholder col-12"></span>
 
-<div class="row row-cols-1 row-cols-md-1 g-4">
-   {% for location in locations %}
-   <div class="card border-0" style="width: 18rem;">
-      <img src="{{location.img}}" class="card-img-top" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">{{location.location_title}}</h5>
-      <a href="locations/{{location.location_id}}" class="stretched-link"></a>
+   <div class="row row-cols-1 row-cols-md-1 g-4">
+      {% for location in locations %}
+      <div class="card border-0" style="width: 18rem;">
+         <img src="{{location.img}}" class="card-img-top" alt="...">
+         <div class="card-body">
+         <h5 class="card-title">{{location.location_title}}</h5>
+         <a href="locations/{{location.location_id}}" class="stretched-link"></a>
+         </div>
       </div>
+      {% endfor %}
    </div>
-   {% endfor %}
 </div>
 
 

@@ -42,7 +42,7 @@
             </div>
         </div>
     </nav>
-    <div class = 'container'>
+    <div>
       <!-- my flash messages -->
       {% for msg in get_flashed_messages() %}
       <p class="flash-msg">
@@ -88,7 +88,9 @@
         </div>
         <div class="w-layout-grid footer-grid-4">
           <div class="footer-grid-item logo-column">
+            <a href="/" class="footer-link">
             <img class= "footer-logo" src="/static/img/logo_footer_1.png" alt="" width="110" height="22">
+            </a>
             <p class="footer-lparagraph">Coliving spaces, community, and perks designed for remote workers and creatives.</p>
             <div class="footer-divider">
           </div>
@@ -172,20 +174,20 @@
             </div>
             <div class="div-block-123">
               <div class="social-link-block">
-                <a href="https://www.facebook.com/outsiteco" class="w-inline-block">
+                <a href="https://www.facebook.com" class="w-inline-block">
                   <img src="/static/img/facebook.png" alt="Outsite Facebook Share Icon" class="social-image">
                 </a>
-                <a href="https://www.instagram.com/outsiteco/" class="w-inline-block">
+                <a href="https://www.instagram.com" class="w-inline-block">
                   <img src="/static/img/instagram.png" alt="Outsite Instagram Share Icon" class="social-image">
                 </a>
-                <a href="https://twitter.com/outsiteco" class="w-inline-block">
+                <a href="https://twitter.com" class="w-inline-block">
                   <img src="/static/img/twitter.png" alt="Outsite Twitter Share Icon" class="social-image">
                 </a>
-                <a href="https://www.youtube.com/channel/UCurN1VRwAE2mss7mWM1v-qw" class="w-inline-block">
+                <a href="https://www.youtube.com" class="w-inline-block">
                   <img src="/static/img/youtube.png" alt="Outsite Youtube Share Icon" class="social-image">
                 </a>
-                <a href="https://www.linkedin.com/company/outsite/" class="w-inline-block">
-                  <img src="/static/img/linkedIn.png" alt="Outsite Angellist Share Icon" class="social-image">
+                <a href="https://www.linkedin.com" class="w-inline-block">
+                  <img src="/static/img/linkedIn.png" alt="..." class="social-image">
                 </a>
               </div>
             </div>

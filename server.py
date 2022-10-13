@@ -25,8 +25,9 @@ app.jinja_env.undefined = StrictUndefined
 @app.route("/")
 def homepage():
     """Show homepage"""
+    all_locations = crud.get_all_locations()
 
-    return render_template("homepage.html")
+    return render_template("homepage.html", locations = all_locations)
 
 @app.route("/locations")
 def show_all_locations():
@@ -169,12 +170,11 @@ def new_review():
     return redirect("/")
 
 @app.route('/test')
-def show_test(location_id = 1):
+def show_test():
     """Display test page."""
-    location = crud.get_location_by_id(location_id)
-    reviews = crud.get_review_by_location_id(location_id)
+    all_locations = crud.get_all_locations()
 
-    return render_template("test.html", location = location, reviews = reviews)
+    return render_template("test.html", all_locations = all_locations)
 
 
 

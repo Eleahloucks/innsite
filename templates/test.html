@@ -1,214 +1,187 @@
-<html>
-  <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/site.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #D9BBA9;">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="/">Innsite
-          </a>
-          <div class="collapse navbar-collapse">
-              <div class="navbar-nav">
-                <a class="nav-link" href="/about"> <img class="about"> What is Innsite?</a>
-              </div>
-              <div class="navbar-nav">
-                  <a class="nav-link" href="/locations"> <img class="all-locations">Locations</a>
-              </div>
-              <div class="navbar-nav">
-                <a class="nav-link" href="/book-now"> <img class="book-now">Book Now</a>
-            </div>
-            <div class="navbar-nav">
-              {% if 'email' in session %}
-              <a class="nav-link" href="/profile"> <img class="log-in">Hi, {{session['email']}}</a>
-              {% else %}
-              <a class="nav-link" href="/login"> <img class="log-in">Log In</a>
-              {% endif %}
-            </div>
+{% extends 'base.html' %}
 
-          </div>
-      </div>
-  </nav>
-  <div>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <h1>Header 1</h1>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <h2>Header 2</h2>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <h3>Header 3</h3>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <h4>Header 4</h4>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <h5>HEADING 5</h5>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <p>paragraph</p>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <button type="button" class="btn btn-rounded innsite-button-navy">Become a Member</button>
-    <span class="placeholder col-12"></span>
-    <button type="button" class="btn btn-rounded innsite-button-green">Become a Member</button>
-    <span class="placeholder col-12"></span>
-    <button type="button" class="btn btn-rounded innsite-button-ivory">Become a Member</button>
-    <span class="placeholder col-12"></span>
-    <button type="button" class="btn btn-rounded innsite-button-light">Become a Member</button>
-    <span class="placeholder col-12"></span>
-    <button type="button" class="btn btn-rounded innsite-button-test _w-100">Become a Member</button>
+{% block title %}{{ location.location_title }} - Details{% endblock %}
 
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
-    <span class="placeholder col-12"></span>
+{% block body %}
+
+<!-- <div style="background-image:url(&quot;{{location.img}}&quot;)" class="section-hero wf-section">
+  <div class="filer-hero-locations">
   </div>
-
-  <div class="footer wf-section">
-    <div class="dark-section-footer">
-      <div class="container">
-        <div class="w-layout-grid footer-grid-2 top">
-          <div id="w-node-b497ce8b-4431-11aa-85ee-d531ada6c9d7-c432da1b" class="footer-grid-item">
-            <h4 class="headline">Keep up with location openings, community events, and other news.</h4>
-            <div id="Footer-Email-Capture-2020" class="footer-email-capture-form w-form">
-              <form id="wf-form-Footer-Email-Capture-2020" name="wf-form-Footer-Email-Capture-2020" data-name="Footer Email Capture 2020" method="get" class="footer-email-form" aria-label="Footer Email Capture 2020" data-hs-cf-bound="true">
-                <input type="email" class="text-field-2020 footer w-input" maxlength="256" name="email" data-name="Email" placeholder="name@email.com" id="email" required="">
-                <input type="submit" value="→" data-wait="Please wait..." class="email-capture-cta w-button">
-              </form>
+  <div class="container-lg w-container">
+    <div class="layout-2-col is-llp-hero-section">
+      <div class="col-1-of-2 is-llp-hero-section">
+        <h1 class="label-hero is-white">Coliving in Santa Cruz, California</h1>
+        <h2 class="heading-hero is-white inline">Outsite </h2>
+        <h2 class="heading-hero is-white inline">Santa Cruz - Natural Bridges</h2>
+        <div class="mt-sm">
+          <div class="paragraph-hero is-white inline">Charming Beach House</div>
+          <div class="paragraph-hero is-white inline"> •
+          </div>
+          <div class="paragraph-hero is-white inline">North California Surf Town
+          </div>
+          <div class="paragraph-hero is-white inline"> •
+          </div>
+          <div class="paragraph-hero text-white inline">Hot Tub
           </div>
         </div>
-        <div id="w-node-_70a7ba46-b12b-3bf8-3a3b-89e9fdfba512-c432da1b" class="footer-grid-item">
-          <div class="mini-testimonial-generator w-dyn-list">
-            <div role="list" class="w-dyn-items">
-              <div role="listitem" class="w-dyn-item">
-                <div class="footer-testimonial-columns w-row">
-                  <div class="footer-testimonial-column-1 w-col w-col-3">
-                    <img src="https://global-uploads.webflow.com/5ab30f883c0d5f3ebc626470/5f857cdc0a4419689dbefc28_andra%20vomir%20testimonial.png" alt="" class="footer-testimonial-head">                  </div>
-                  <div class="footer-testimonial-column-2 w-col w-col-9">
-                    <div class="div-block-2384">
-                      <p class="footer-lparagraph">"It has the social benefits of a hostel, but with the privacy and professionalism that you need as a digital nomad...5 stars!"</p>
-                      <p class="headline">Gemma Thompson</p>
+        <div class="btn-icon-wrapper is-llp-hero-section">
+          <div class="w-embed">
+            <div class="btn-icon is-llp-hero-section" data-fancybox-trigger="space-gallery">
+	            <i class="fa-light fa-image fa-icon-light btn-icon__icon is--llp-hero-section"></i>
+              <div class="btn-icon__txt is--llp-hero-section">Photo Gallery
+              </div>
+            </div>
+          </div><a href="/tours" class="btn-icon is-llp-hero-section w-inline-block">
+            <div class="btn-icon__icon is--llp-hero-section w-embed">
+              <i class="fa-light fa-clapperboard-play fa-icon-light"></i>
+            </div>
+            <div class="btn-icon__txt is--llp-hero-section">Book Virtual Tour
+            </div></a>
+          </div>
+        </div>
+        <div class="col-2-of-2 is-llp-hero-section">
+          <div class="form-locations-wrapper">
+            <h3 class="text-2xl mt-0">Book your stay today.</h3>
+            <div class="mt-md w-embed w-script">
+              <div id="outsite-widget-search" data-selected-location="sc5">
+                <div id="outsite-widget" class="flex-1">
+                  <div class="grid grid-cols-1 items-center space-y-6 leading-5">
+                    <div class="grid">
+                      <div class="border border-transparent border-b-gray-500 py-4 focus-within:border-b-gray-900 hover:border-b-gray-900/[.5]">
+                        <label class="mr-[5.25rem] inline-block font-semibold leading-6 text-gray-900">Check-in</label>
+                        <label class="inline-block font-semibold leading-6 text-gray-900">Check-out</label>
+                        <div class="date-range-picker w-full placeholder-gray-400 focus-within:outline-none disabled:text-gray-400 ">
+                          <div class="DateRangePicker DateRangePicker_1 DateRangePicker__block DateRangePicker__block_2">
+                            <div>
+                              <div class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__block DateRangePickerInput__block_2 DateRangePickerInput__showClearDates DateRangePickerInput__showClearDates_3">
+                                <div class="DateInput DateInput_1">
+                                  <input class="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2" aria-label="Add dates" type="text" id="startDate" name="startDate" placeholder="Add dates" autocomplete="off" readonly="" aria-describedby="DateInput__screen-reader-message-startDate" value=""><p class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1" id="DateInput__screen-reader-message-startDate">Navigate forward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.</p>
+                                </div>
+                                <div class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1" aria-hidden="true" role="presentation">
+                                  <svg class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1" focusable="false" viewBox="0 0 1000 1000">
+                                    <path d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z">
+                                    </path>
+                                  </svg>
+                                </div>
+                                <div class="DateInput DateInput_1">
+                                  <input class="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2" aria-label="Add dates" type="text" id="endDate" name="endDate" placeholder="Add dates" autocomplete="off" readonly="" aria-describedby="DateInput__screen-reader-message-endDate" value=""><p class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1" id="DateInput__screen-reader-message-endDate">Navigate backward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.</p>
+                                </div>
+                                <button type="button" aria-label="Clear Dates" class="DateRangePickerInput_clearDates DateRangePickerInput_clearDates_1 DateRangePickerInput_clearDates_default DateRangePickerInput_clearDates_default_2 DateRangePickerInput_clearDates__hide DateRangePickerInput_clearDates__hide_3">
+                                  <svg class="DateRangePickerInput_clearDates_svg DateRangePickerInput_clearDates_svg_1" focusable="false" viewBox="0 0 12 12">
+                                    <path fill-rule="evenodd" d="M11.53.47a.75.75 0 0 0-1.061 0l-4.47 4.47L1.529.47A.75.75 0 1 0 .468 1.531l4.47 4.47-4.47 4.47a.75.75 0 1 0 1.061 1.061l4.47-4.47 4.47 4.47a.75.75 0 1 0 1.061-1.061l-4.47-4.47 4.47-4.47a.75.75 0 0 0 0-1.061z">
+                                    </path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border border-transparent border-b-gray-500 py-4 focus-within:border-b-gray-900 hover:border-b-gray-900/[.5]">
+                        <div class="relative">
+                          <button class="relative block w-full w-full appearance-none pr-10 text-left placeholder-gray-300 focus:outline-none" id="headlessui-listbox-button-1" type="button" aria-haspopup="true" aria-expanded="false" data-headlessui-state="">
+                            <label class="inline-block cursor-pointer font-semibold leading-6 text-gray-900">Guests</label>
+                            <span class="block truncate">One guest</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="">
+                      <button class="inline-flex w-full items-center justify-center rounded-[3.125rem] bg-gray-900 px-6 py-3 text-base font-medium text-white transition-colors duration-[250ms] hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 active:bg-gray-700 active:outline-none disabled:pointer-events-none disabled:opacity-40">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass mx-1.5 w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path fill="currentColor" d="M507.3 484.7l-141.5-141.5C397 306.8 415.1 259.7 415.1 208c0-114.9-93.13-208-208-208S-.0002 93.13-.0002 208S93.12 416 207.1 416c51.68 0 98.85-18.96 135.2-50.15l141.5 141.5C487.8 510.4 491.9 512 496 512s8.188-1.562 11.31-4.688C513.6 501.1 513.6 490.9 507.3 484.7zM208 384C110.1 384 32 305 32 208S110.1 32 208 32S384 110.1 384 208S305 384 208 384z">
+                          </path>
+                        </svg>Check Availability
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-layout-grid footer-grid-4">
-        <div class="footer-grid-item logo-column">
-          <img class= "footer-logo" src="/static/img/logo_footer_1.png" alt="" width="110" height="22">
-          <p class="footer-lparagraph">Coliving spaces, community, and perks designed for remote workers and creatives.</p>
-          <div class="footer-divider">
-        </div>
-
-      </div>
-        <div id="w-node-_66478074-6170-bf6e-34d2-071631eee9d6-c432da1b" class="footer-grid-item">
-          <h4 class="headline">Product</h4>
-          <div class="div-block-51">
-            <p class="footer-text">
-              <a href="/locations" class="footer-link">Locations</a>
-            </p>
-            <p class="footer-text">
-              <a href="/spaces" class="footer-link">Spaces</a>
-            </p><p class="footer-text">
-              <a href="/community" class="footer-link">Community</a>
-            </p>
-            <p class="footer-text">
-              <a href="/benefits" class="footer-link">Benefits</a>
-            </p><p class="footer-text">
-              <a href="/membership/deals" class="footer-link">Member Deals</a>
-            </p><p class="footer-text">
-              <a href="https://outsitecoworkcafe.com" target="_blank" class="footer-link">Outsite Cowork Cafes</a>
-            </p><p class="footer-text">
-              <a href="/teams/retreats" class="footer-link">Team Retreats</a>
-            </p>
-            <p class="footer-text">
-              <a href="/teams/membership" class="footer-link">Business Memberships</a>
-            </p>
-            <p class="footer-text">
-              <a href="/help" class="footer-link">FAQ / Help Center</a>
-            </p>
-            <p class="footer-text">
-              <a href="/reviews" class="footer-link">Reviews</a>
-            </p>
-            <p class="footer-text">
-              <a href="/region/france" class="footer-link">France</a>
-            </p>
-            <p class="footer-text"><a href="/region/mexico" class="footer-link">Mexico</a>
-            </p>
-          </div>
-        </div>
-        <div id="w-node-ed00c1c0-0693-d675-4287-3ab2896c26d7-c432da1b" class="footer-grid-item"><h4 class="headline">Company</h4>
-          <div class="div-block-51">
-            <p class="footer-text">
-              <a href="/about" target="_blank" class="footer-link">About Us</a>
-            </p>
-            <div class="footer-text">
-              <a href="http://www.outsite.co/live-differently" target="_blank" class="footer-link">Values </a>
-            </div>
-            <p class="footer-text">
-              <a href="https://www.outsite.co/contact" target="_blank" class="footer-link">Press</a>
-            </p>
-            <p class="footer-text">
-              <a href="/sustainability" target="_blank" class="footer-link">Sustainability</a>
-            </p>
-            <p class="footer-text">
-              <a href="/real-estate-partners" class="footer-link">Real Estate Partners</a>
-            </p>
-            <p class="footer-text">
-              <a href="https://app.outsite.co/referral-program" class="footer-link">Earn $50 per Referral</a>
-            </p>
-            <p class="footer-text">
-              <a href="http://www.outsite.co/content/code-of-conduct" target="_blank" class="footer-link">Code of Conduct</a>
-            </p>
-            <p class="footer-text">
-              <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
-            </p>
-          </div>
-        </div>
-        <div id="w-node-e2614b17-f0fd-3ff9-42dd-4e8c381b3c03-c432da1b" class="footer-grid-item">
-          <h4 class="headline">Connect</h4>
-          <div class="div-block-51">
-            <p class="footer-text">
-              <a href="/contact" class="footer-link">Contact Us</a>
-            </p>
-            <p class="footer-text">
-              <a href="/ultimate-guides" class="footer-link">Ultimate Guides</a>
-            </p>
-            <p class="footer-text">
-              <a href="/blog" class="footer-link">Blog</a>
-            </p>
-          </div>
-          <div class="div-block-123">
-            <div class="social-link-block">
-              <a href="https://www.facebook.com/outsiteco" class="w-inline-block">
-                <img src="/static/img/facebook-logo-svgrepo-com.svg" alt="Outsite Facebook Share Icon" class="social-image">
-              </a>
-              <a href="https://www.instagram.com/outsiteco/" class="w-inline-block">
-                <img src="https://global-uploads.webflow.com/5ab14126edfae6905fd3ff69/5be48e2fc0d9bf822175ef6b_icons8-instagram-filled-50.png" alt="Outsite Instagram Share Icon" class="social-image">
-              </a>
-              <a href="https://twitter.com/outsiteco" class="w-inline-block">
-                <img src="https://global-uploads.webflow.com/5ab14126edfae6905fd3ff69/5be48e2867fc082b01f763eb_icons8-twitter-filled-50.png" alt="Outsite Twitter Share Icon" class="social-image">
-              </a>
-              <a href="https://www.youtube.com/channel/UCurN1VRwAE2mss7mWM1v-qw" class="w-inline-block">
-                <img src="https://global-uploads.webflow.com/5ab14126edfae6905fd3ff69/5be48dea55b14e97a859a0b6_icons8-youtube-play-button-logo-filled-50.png" alt="Outsite Youtube Share Icon" class="social-image">
-              </a>
-              <a href="https://www.linkedin.com/company/outsite/" class="w-inline-block">
-                <img src="https://global-uploads.webflow.com/5ab14126edfae6905fd3ff69/6262e87576c2fc66b681905d_linkedin-logo.png" alt="Outsite Angellist Share Icon" class="social-image">
-              </a>
+              <script charset="utf-8" type="text/javascript" src="https://cdn.outsite.co/widgets/main.js"></script>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div> -->
+
+
+
+<h2>Book Now</h2>
+<form id = "book-form" method="post" action = "/book-now">
+  <fieldset>
+    <!-- need the format to be like global_date_format = "%m-%d-%Y"  -->
+    <div>
+      <label for = "arrival">Arrival Date:</label>
+      <input type="date" name="arrival" id = "arrival">
+    </div>
+
+    <div>
+      <label for = "departure">Departure Date:</label>
+      <input type="date" name="departure" id = "departure">
+    </div>
+
+    <div>
+      <label for="location">Location:</label>
+      <select name ="location" id = "location">
+          <option value = "{{location.location_title}}">{{location.location_title}}</option>
+      </select>
+    </div>
+    <input type = "hidden" value = {{location.location_id}} id = "location_id">
+    <button id = "book-now" type = "button" value = 'book-now'> Book Now </button>
+
+  </fieldset>
+</form>
+
+<h1>{{ location.location_title }}</h1>
+
+<p>
+  {{ location.overview }}
+</p>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    {% for i in range(1,6) %}
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i + 1 }}"></button>
+    {% endfor %}
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{location.images[0].img_src}}" class="d-block w-100" alt="...">
+    </div>
+    {% for image in location.images[1:] %}
+    <div class="carousel-item">
+      <img src="{{image.img_src}}" class="d-block w-100" alt="...">
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<h5>Amenities</h5>
+<p>
+  {% for amenity in location.amenities %}
+   <li>{{ amenity.amenity_title }}</li>
+  {% endfor %}
+</p>
+<div id = 'location-review'>
+  <h3>Reviews</h3>
+  <p> {{ reviews.score }} stars</p>
+  <p> <b>{{ reviews.title }}</b> </p>
+  <p> {{ reviews.body }} </p>
+</div>
+
+<a href = '/locations'> See all Locations </a>
+
+<script src = "/static/js/index.js"></script>
+
+{% endblock %}

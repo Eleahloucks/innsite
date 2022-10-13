@@ -9,30 +9,56 @@
 {% endblock %}
 
 {% block body %}
+<section class="map">
+  <div id="map"></div>
+</section>
 
-<h1>Book a Location</h1>
-<p>See our locations around the world:</p>
+<div class="container">
 
-<div class="container overflow-hidden">
-  <!-- {% for location in locations %}
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="{{location.img}}" class="card-img-top" alt="...">
-      <div class="card-body">
+  <span class="placeholder col-12"></span>
+  <span class="placeholder col-12"></span>
+  <span class="placeholder col-12"></span>
+  <h1>Choose your destination.</h1>
+  <p>Discover Outsite Spaces in urban, coastal or alpine locations around the world.</p>
+  <span class="placeholder col-12"></span>
+  <span class="placeholder col-12"></span>
+  <span class="placeholder col-12"></span>
+
+  <div class="row row-cols-1 row-cols-md-1 g-4">
+     {% for location in locations %}
+     <div class="card border-0" style="width: 18rem;">
+        <img src="{{location.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
         <h5 class="card-title">{{location.location_title}}</h5>
-        <a href="/locations">Go somewhere</a>
-      </div>
-    </div>
-  {% endfor %}
-  </div> -->
-  <div class="row gx-5">
-    <div class="col-6">
-      <section class="map">
-        <div id="map"></div>
-      </section>
-    </div>
+        <a href="locations/{{location.location_id}}" class="stretched-link"></a>
+        </div>
+     </div>
+     {% endfor %}
   </div>
 </div>
+
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    {% for location in locations %}
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="{{location.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{location.location_title}}</h5>
+          <a href="/locations">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="col">
+
+    </div>
+  </div>
+</div> -->
 
 
 

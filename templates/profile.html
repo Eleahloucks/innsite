@@ -2,64 +2,83 @@
 {% block title %}Work Travel Co-Living Home{% endblock %}
 
 {% block body %}
-
-<div class="col-md-6 mb-4">
-
-  <h2 class="my-5 h2">With shadow</h2>
-
-  <img class="rounded-circle z-depth-2" alt="100x100" src= "{{user.img}}"
-    data-holder-rendered="true">
-
+<div class="page-wrapper">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="ml-3">
+        <div class="card border-0">
+          <div class="card-body text-white d-flex flex-row" style="background-color: #D9BBA9; height:200px;">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+              <img src="{{user.img}}"
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2 grayscale"
+                style="width: 150px; z-index: 1">
+              <button type="button" class="btn btn-outlined--black"
+                style="z-index: 1;">
+                Edit profile
+              </button>
+            </div>
+            <div class="profile-margin" style="margin-top: 130px;">
+              <h5>{{user.fname}} {{user.lname}}</h5>
+            </div>
+          </div>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <span class="placeholder col-12"></span>
+          <div class="card-body p-5 text-black">
+            <!-- <div class="mb-5">
+              <p class="lead fw-normal mb-1">About</p>
+              <div class="p-4" style="background-color: #4C6353; opacity: 30%;">
+                <p class="font-italic mb-1">Web Developer</p>
+                <p class="font-italic mb-1">Lives in New York</p>
+                <p class="font-italic mb-0">Photographer</p>
+              </div>
+            </div> -->
+            <div class="mb-5">
+              <h4 class="lead fw-normal mb-1"><b>Trips:</b></h4>
+              <span class="placeholder col-12"></span>
+              <div class="row row-cols-1 row-cols-md-1 g-4">
+                {% for booking in user.bookings %}
+                <div class="card border-0" style="width: 18rem;">
+                  <img class="card-img-top" src="{{ booking.location['img'] }}" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ booking.location['location_title'] }}</h4>
+                    <p class="text-base card-text">{{ booking.arrival.strftime("%m-%d-%Y") }} thru {{ booking.departure.strftime("%m-%d-%Y") }}</p>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <span class="placeholder col-12"></span>
+              <span class="placeholder col-12"></span>
+              <span class="placeholder col-12"></span>
+              <span class="placeholder col-12"></span>
+              <!-- <button href="/new-review" type="button" class="btn btn-outlined--black"> Leave a Review</button> -->
+              <h4 class="lead fw-normal mb-1"> Leave a <a href="/new-review">Review</a></h4>
+              <form action = "/sign-out" method="POST">
+              <div><input class="btn btn-outlined--black" type="Submit" value = "Sign Out" />
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
-  <h1>Welcome {{user.fname}}!</h1>
 
-  <h2> My Bookings:</h2>
 
-<div>
-  {% for booking in user.bookings %}
 
-  <p> You are booked from {{ booking.arrival.strftime("%m-%d-%Y") }} to {{ booking.departure.strftime("%m-%d-%Y") }}  at location {{ booking.location['location_title'] }}.</p>
-  {% endfor %}
-</div>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3> Leave a <a href="/new-review">Review</a></h3>
-
-<form action = "/sign-out" method="POST">
-  <div>
-    <input type="Submit" value = "Sign Out" />
-  </div>
-</form>
 
 
 

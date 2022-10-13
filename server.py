@@ -150,9 +150,10 @@ def show_about():
 def show_review_form():
     """Display review form template."""
     all_locations = crud.get_all_locations()
+    user = crud.get_user_by_id(session['user_id'])
 
 
-    return render_template("reviewform.html", all_locations = all_locations)
+    return render_template("reviewform.html", all_locations = all_locations, user = user, crud = crud)
 
 
 @app.route("/new-review", methods = ['POST'])

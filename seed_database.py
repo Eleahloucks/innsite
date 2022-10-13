@@ -163,9 +163,9 @@ check_3 = get_location_by_id(3)
 
 #SAMPLE USERS
 
-user_1 = create_user('user1@email.com', "1234", "Michael", "Scott", "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
-user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley",  "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
-user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte",  "https://res.cloudinary.com/doqa1yq0d/image/upload/v1664303746/cld-sample.jpg")
+user_1 = create_user('user1@email.com', "1234", "Michael", "Scott", "https://res.cloudinary.com/doqa1yq0d/image/upload/v1665002917/ifibmz147k74oi5jcku5.jpg")
+user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley",  "https://openpsychometrics.org/tests/characters/test-resources/pics/TO/4.jpg")
+user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte",  "https://costumerocket.com/wp-content/uploads/Dwight-Schrute-shirt-.jpg")
 
 user_check_1 = get_user_by_email('user1@email.com')
 user_check_2 = get_user_by_email('user2@email.com')

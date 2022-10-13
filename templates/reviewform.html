@@ -3,13 +3,25 @@
 {% block title %}Innsite{% endblock %}
 
 {% block body %}
-<h1>Work anywhere. Live differently.</h1>
-<p>Please share your experience:</p>
-<div id="review-form"></div>
-
-<ul>
-  <li><a href="/locations">View all locations</a></li>
-</ul>
+<div class="bg-image" style= "background-image:url('https://res.cloudinary.com/doqa1yq0d/image/upload/v1664321539/Bali/62a8ba5e2248d35e65d96593_Dining_20area-6_saz86k.jpg')">
+  <div class="gradient"></div>
+  <div class="container-lg w-container">
+    <div class="layout-2-col is-llp-hero-section">
+      <div class="col-1-of-2 is-llp-hero-section">
+        <h4 class="make-white">Hi, {{user.fname}}!</h4>
+        <h1 class="make-white inline">We'd love to hear more about your experience at Innsite!</h1>
+      </div>
+      <div class="col-2-of-2 is-llp-hero-section">
+        <div class="booking-form-locations-wrapper">
+          <h4 class="text-2xl mt-0"><b>Please share your experience.</b></h4>
+          <span class="placeholder col-12"></span>
+          <div id="review-form"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src = "/static/js/index.js"></script>
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>

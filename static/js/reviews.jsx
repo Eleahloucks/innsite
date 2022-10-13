@@ -17,28 +17,29 @@
 
       return (
         <form action="/new-review" method="POST">
-          <p>
-            Name<input type="text" name="name"/>
-          </p>
-          <p>
-            Email <input type="text" name="email"/>
-          </p>
-          <p>
-            Location <input type="text" name="location"/>
-          </p>
-          <p>
-            Rating <input type="text" name="score"/>
-          </p>
-          <p>
-            Title <input type="text" name="title"/>
-          </p>
-          <p>
-            Description <input type="text" name="body"/>
-          </p>
+          <h5>
+            Name:<input type="text" name="name"/>
+          </h5>
+          <h5>
+            Email: <input type="text" name="email"/>
+          </h5>
+          <h5>
+            Location: <input type="text" name="location"/>
+          </h5>
+          <h5>
+            Rating: <input type="text" name="score"/>
+          </h5>
+          <h5>
+            Title: <input type="text" name="title"/>
+          </h5>
+          <h5>
+            Description: <input type="text" name="body"/>
+          </h5>
 
-          <p>
-            <input id ="new-review" type="submit"/>
-          </p>
+
+          <h4>
+            <input class="btn innsite-button-green"id ="new-review" type="submit"/>
+          </h4>
         </form>
         );
        }

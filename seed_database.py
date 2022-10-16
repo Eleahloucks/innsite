@@ -171,9 +171,9 @@ user_check_1 = get_user_by_email('user1@email.com')
 user_check_2 = get_user_by_email('user2@email.com')
 user_check_3 = get_user_by_email('user3@email.com')
 
-print(user_check_1)
-print(user_check_2)
-print(user_check_3)
+# print(user_check_1)
+# print(user_check_2)
+# print(user_check_3)
 
 #SAMPLE BOOKINGS
 
@@ -251,6 +251,7 @@ def grab_img_by_tag(img_tag):
   """create a gallery with a list of img urls by tag"""
   gallery = []
   tag_json_obj = cloudinary.Search().expression(f'tags=#{img_tag}').execute()
+  # print(tag_json_obj)
   img_one = tag_json_obj['resources'][0]['secure_url']
   img_two = tag_json_obj['resources'][1]['secure_url']
   img_three = tag_json_obj['resources'][2]['secure_url']

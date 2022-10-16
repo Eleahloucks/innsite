@@ -10,36 +10,41 @@ style= "background-image:url('{{location.img}}')"-->
 <div class="bg-image" style= "background-image:url('{{location.img}}')">
   <div class="gradient"></div>
 
-  <div class="container px-5">
+  <div class="container">
     <div class="layout-2-col is-llp-hero-section">
       <div class="col-1-of-2 is-llp-hero-section">
         <h4 class="make-white">Coliving in {{location.location_title}}</h4>
-        <h1 class="make-white inline">Outsite {{location.location_title}}</h1>
+        <h1 class="make-white inline">Innsite {{location.location_title}}</h1>
       </div>
       <div class="col-2-of-2 is-llp-hero-section">
         <div class="booking-form-locations-wrapper">
           <h3 class="text-2xl mt-0">Book your stay today.</h3>
+          <span class="placeholder col-12"></span>
           <form id = "book-form" method="post" action = "/book-now">
             <fieldset>
               <div>
                 <!-- need the format to be like global_date_format = "%m-%d-%Y"  -->
                 <div>
-                  <label for = "arrival"><h4>Arrival Date:</h4></label>
+                  <label for = "arrival"><h4><b>Arrival Date:</b></h4></label>
                   <input type="date" class="arrival-departure-input" name="arrival" id = "arrival">
                 </div>
 
                 <div>
-                  <label for = "departure"><h4>Departure Date:</h4></label>
+                  <label for = "departure"><h4><b>Departure Date:</b></h4></label>
                   <input type="date" class="arrival-departure-input" name="departure" id = "departure">
                 </div>
 
                 <div>
-                  <label for="location"><h4>Location:</h4></label>
+                  <label for="location"><h4><b>Location:</b></h4></label>
                   <select class="arrival-departure-input" name ="location" id = "location">
                       <option value = "{{location.location_title}}">{{location.location_title}}</option>
                   </select>
                 </div>
+                <div>
+                  <h4><b>Cost:</b> ${{location.price}} USD</h4>
+                </div>
                 <input type = "hidden" value = {{location.location_id}} id = "location_id">
+                <span class="placeholder col-12"></span>
                 <button id = "book-now" class="btn btn-rounded innsite-button-green" type = "button" value = 'book-now'> Book Now </button>
               </div>
             </fieldset>
@@ -49,7 +54,7 @@ style= "background-image:url('{{location.img}}')"-->
     </div>
   </div>
 </div>
-<div class = "container">
+<div class = "container px-5">
   <span class="placeholder col-12"></span>
   <span class="placeholder col-12"></span>
   <span class="placeholder col-12"></span>
@@ -93,12 +98,16 @@ style= "background-image:url('{{location.img}}')"-->
   <h4 class="amenity-tile">{{ amenity.amenity_title }}</h4>
   {% endfor %}
   <span class="placeholder col-12"></span>
-  <div id = 'location-review'>
-    <h2>Reviews for Outsite - {{location.location_title}}</h2>
-    <p> {{ reviews.score }} stars</p>
-    <p> <b>{{ reviews.title }}</b> </p>
-    <p> {{ reviews.body }} </p>
+  <span class="placeholder col-12"></span>
+  <span class="placeholder col-12"></span>
+  <h3>Reviews for Innsite - {{location.location_title}}</h3>
+  <span class="placeholder col-12"></span>
+  <div id = 'location-review' class = 'location-review'>
+    <h4 class = "make-black"><b>{{ reviews.score }} stars</b></h4>
+    <h5 class="make-black"><b>{{ reviews.title }}</b></h5>
+    <p class="footer-lparagraph make-black"> {{ reviews.body }} -{{reviews.user.fname}}</p>
   </div>
+  <span class="placeholder col-12"></span>
   <span class="placeholder col-12"></span>
   <a href="/locations" class="btn-outlined--black btn">See all Locations</a>
   <span class="placeholder col-12"></span>

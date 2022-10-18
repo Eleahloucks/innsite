@@ -17,14 +17,9 @@
               </button>
             </div>
             <div class="profile-margin" style="margin-top: 130px;">
-              <h5>{{user.fname}} {{user.lname}}</h5>
+              <h5 class="make-black">{{user.fname}} {{user.lname}}</h5>
             </div>
           </div>
-          <span class="placeholder col-12"></span>
-          <span class="placeholder col-12"></span>
-          <span class="placeholder col-12"></span>
-          <span class="placeholder col-12"></span>
-          <span class="placeholder col-12"></span>
           <span class="placeholder col-12"></span>
           <span class="placeholder col-12"></span>
           <span class="placeholder col-12"></span>
@@ -46,7 +41,7 @@
               </div>
             </div> -->
             <div class="mb-5">
-              <h4 class="lead fw-normal mb-1"><b>Trips:</b></h4>
+              <h4 class="lead fw-normal mb-1"><b> My Trips:</b></h4>
               <span class="placeholder col-12"></span>
               <div class="row row-cols-1 row-cols-md-1 g-4">
                 {% for booking in user.bookings %}

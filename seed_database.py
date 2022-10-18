@@ -167,6 +167,7 @@ user_1 = create_user('user1@email.com', "1234", "Michael", "Scott", "https://res
 user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley",  "https://openpsychometrics.org/tests/characters/test-resources/pics/TO/4.jpg")
 user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte",  "https://costumerocket.com/wp-content/uploads/Dwight-Schrute-shirt-.jpg")
 
+
 user_check_1 = get_user_by_email('user1@email.com')
 user_check_2 = get_user_by_email('user2@email.com')
 user_check_3 = get_user_by_email('user3@email.com')
@@ -182,6 +183,10 @@ global_date_format = "%m-%d-%Y"
 booking_1 = create_booking(datetime.strptime('12-25-2022', global_date_format), datetime.strptime('01-01-2023', global_date_format), user_1, location_1)
 booking_2 = create_booking(datetime.strptime('01-01-2023', global_date_format), datetime.strptime('01-30-2023', global_date_format), user_2, location_2)
 booking_3 = create_booking(datetime.strptime('02-21-2023', global_date_format), datetime.strptime('02-28-2022', global_date_format), user_3, location_3)
+booking_4 = create_booking(datetime.strptime('12-01-2022', global_date_format), datetime.strptime('12-15-2022', global_date_format), user_2, location_8)
+booking_5 = create_booking(datetime.strptime('01-01-2023', global_date_format), datetime.strptime('01-30-2023', global_date_format), user_1, location_9)
+booking_5 = create_booking(datetime.strptime('02-14-2023', global_date_format), datetime.strptime('02-28-2023', global_date_format), user_3, location_10)
+
 
 # booking_check_1 = get_booking_by_id(1)
 # booking_check_2 = get_booking_by_id(2)
@@ -206,6 +211,8 @@ review_7 = create_review(title = "Amazing stay!", body = "I was so happy to spen
 review_8 = create_review("Great and affordable to remote work and meet others!", "Outsite was truly a great experience. The WhatsApp group was an easy way to connect with others traveling/working in Lisbon. The accommodations are clean and kept up nicely by staff and others staying", 5, 2, 8)
 review_9 = create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 9 )
 review_10 = create_review("The Location, the people and the kitchen!","My stay in San Francisco was great. The house is large and in a perfect Pac heights location. It's very walkable with lots of restaurants, parks and studios near by. There was ample space to work and the kitchen was great to cook in!", 4, 3, 10 )
+review_5 = create_review("Great and affordable to remote work and meet others!", "Outsite was truly a great experience. The WhatsApp group was an easy way to connect with others traveling/working in Lisbon. The accommodations are clean and kept up nicely by staff and others staying", 5, 2, 8)
+
 
 
 

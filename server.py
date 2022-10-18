@@ -80,8 +80,7 @@ def process_login():
         session['email'] = potential_user.email
         session['fname'] = potential_user.fname
 
-        flash('Logged in!')
-        return redirect("/locations")
+        return redirect("/")
     #user was found but pw didnt match
     else:
         flash('Not logged in!')

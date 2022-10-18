@@ -33,9 +33,9 @@ a {
   color:#D9BBA9 !important;
 }
 
-a:hover{
-  color:#4C6353 !important;
-}
+/* a:hover{
+  color:#fff !important;
+} */
 
 .full-width {
   margin: 0px !important;

@@ -1,4 +1,4 @@
-""" Models for work travel co-living app. """
+""" Models for Innsite app. """
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -6,10 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 db = SQLAlchemy()
 
-#this table defines the tables in an obj oriented way.
-# it outlines each table and the fields that exist for each
+#this database defines the tables in an obj oriented way.
+    #it outlines each table and the fields that exist for each
 
-class User(db.Model): #one user has many bookings
+class User(db.Model): #one user has many bookings - one to many relationship
     """A user."""
 
     __tablename__ = 'users'
@@ -31,7 +31,7 @@ class User(db.Model): #one user has many bookings
 
 
 
-#took syntax from rating in the movie ratings project
+#took syntax from rating in the movie ratings project in Hackbright demo's
 class Booking(db.Model):
     """A booking."""
 
@@ -52,9 +52,9 @@ class Booking(db.Model):
         return f'<Booking booking_id={self.booking_id} arrival={self.arrival} departure = {self.departure}>'
 
 #many to many relationship between users a locations, middle table that has reviews in it.
-#similar to locamen table with its own review attribute
+#similar to locamen table below but with its own review attribute
 class Review(db.Model):
-    """a review"""
+    """A review."""
 
     __tablename__ = "reviews"
 
@@ -63,15 +63,14 @@ class Review(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
     body = db.Column(db.Text, nullable=False)
     title = db.Column(db.Text, nullable=False)
-    #should be 1-5
-    score = db.Column(db.Integer)
+    score = db.Column(db.Integer) #should be 1-5
 
     location = db.relationship("Location", back_populates="reviews")
     user = db.relationship("User", back_populates="reviews")
 
 
     def __repr__(self):
-        #what does this obj look like when I print it
+        #this sets the format of my review obj
         return f"<Review id={self.review_id} title = {self.title} body ={self.body} score = {self.score}>"
 
 class Location(db.Model): #one location has many amenity per location
@@ -86,7 +85,6 @@ class Location(db.Model): #one location has many amenity per location
     price = db.Column(db.Integer)
     overview = db.Column(db.String)
     description = db.Column(db.String)
-    # capacity = db.Column(db.Integer)
     img = db.Column(db.String)
 
     images = db.relationship("Image", back_populates="location")
@@ -99,7 +97,7 @@ class Location(db.Model): #one location has many amenity per location
     def __repr__(self):
         return f'<Location location_id={self.location_id} location_title={self.location_title} price={self.price} amenities= {self.amenities}>'
 
-class Image(db.Model): #many images for one location
+class Image(db.Model): #many images for one location - many to one relationship
     """A image."""
 
     __tablename__ = 'images'
@@ -118,8 +116,8 @@ class Image(db.Model): #many images for one location
         return f'<Image image_id={self.image_id} img_src={self.img_src}>'
 
 
-class Amenity(db.Model): #one amenity is related to a location with many amenities
-    """A amenity."""
+class Amenity(db.Model): #one amenity is related to a location with many amenities - one to many relationship
+    """An amenity."""
 
     __tablename__ = 'amenities'
 
@@ -138,7 +136,7 @@ class Amenity(db.Model): #one amenity is related to a location with many ameniti
 
 #took syntax from BookGenre in many to many demo
 class LocationAmenity(db.Model): #middle table - do not need to save additional info here
-    """An amenity of a specific location."""
+    """An amenity in a specific location."""
 
     __tablename__ = "location_amenities"
 

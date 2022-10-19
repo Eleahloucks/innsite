@@ -85,14 +85,7 @@ def process_login():
     else:
         flash('Not logged in!')
     return render_template("login.html")
-#main code server and crud
-    #write crud function get images by location_id same as tag
-    #use img source url to render in html template
-        #for img in images
-        #img src = img
-    #write for loop that holds img sources, pass to template and render it.
-#getting info in db
-    #seed db with image info
+
 
 @app.route("/locations/<location_id>")
 def location_details(location_id):
@@ -110,6 +103,13 @@ def book_location(location_id):
     arrival = request.json.get("arrival")
     departure = request.json.get("departure")
     booked_location = request.json.get("location")
+
+    # # Figure out how to get the times to work.
+    # user = crud.get_user_by_id(session['user_id'])
+    # # crud.create_booking(arrival, departure, user, booked_location)
+    # #or this format
+    # global_date_format = "%m-%d-%Y"
+    # crud.create_booking(datetime.strptime(arrival, global_date_format), datetime.strptime(departure, global_date_format), user, location_id)
 
     return jsonify({
         "sucess": True,

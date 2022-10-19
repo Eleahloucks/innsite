@@ -1,54 +1,41 @@
 """CRUD operations."""
+#CRUD - created helper functions that manage operations of create read update and delete. Doesnt have to be named crud.
+
 from model import db, User, Location, Booking, Amenity, LocationAmenity, Review, Image, connect_to_db
 from datetime import datetime
 
-#CRUD - created helper functions that manage operations of create read update and delete. Doesnt have to be named crud.
 
 
 #MVP - Innsite
-# Guests can see the amenities and locations where they can book - DONE
-# When booking they will be asked to create login so they have confirmation of booking - Done
-# Home and about pages will have photos and information about why they should work and travel and where. - DONE
+  # Guests can see the amenities and locations where they can book.
+  # When booking they will be asked to create login so they have confirmation of booking.
+  # Home and about pages will have photos and information about why they should work and travel and where.
+  # Use Google Maps API
 
 
-#TODAY -
+#ADDITIONAL FEATURES ADDED & PROCESS
+  #gallery feature - Cloudinary API
+    #new table in model.py to relate to locations
+      #many images for one location - many to one relationship
+      #write crud function get images by location_id same as tag
+      #use img source url to render in html template
+          #for img in images
+          #img src = img
+      #write for loop that holds img sources, pass to template and render it.
+  #review feature
 
 
-#Qs for staff
-
-#style Q's
-  #fix navbar email to fname
-  #can i have global styling for
-    #font - make my own h1, h2, h3 etc and
-      #i want DM serif display
-    #text colors?
-    #button style?
-
-#STYLING TO DO
-  #quickly finish header and footer basics and - done
-    #move new header and footer over to base
-  #add favicon - done
-  #add logo to nav done - source https://app.logo.com/dashboard/logo_3641e071-7aef-4d89-9d2b-cdaf46ebb4b5/your-logo-files
-  #add logo to footer
-  #add content and photo's to home page
-  #add content and
-
-#STYLE FOR LATER
-  #fix footer font colors
-  #make footer sign out work
-
-
-
-#GENERAL Q's for myself
-
-#AFTER MVP
+#INNSITE 2.0
+  #create a host for each innsite location
+  #make SQL locations and amenitites dump file - DECIDED NOT TO DO
   #add capacity feature - DECIDED NOT TO DO
     #store capacity in location class
     #create crud function to
       #query bookings table for records with location id
         # show arrival and departure dates that overlap
         # select all from bookings where loc id = location 1 and arrival date is less that date a and/or departure date is greater than date b
-  #make SQL locations and amenitites dump file - DECIDED NOT TO DO
+  #users can connect on innsite with those who are staying in the same space.
+
 
 #USER FUNCTIONS
 def create_user(email, password, fname, lname, img):
@@ -75,8 +62,8 @@ def get_user_by_id(user_id):
 
     return User.query.get(user_id)
 
-#REVIEW FUNCTIONS
 
+#REVIEW FUNCTIONS
 def create_review(title, body, score, user_id, location_id):
   """Create a review."""
 
@@ -95,6 +82,7 @@ def get_review_by_user_id(user_id):
     """Get review by user id."""
 
     return Review.query.filter(Review.user_id == user_id).first()
+
 
 #LOCATION FUNCTIONS
 def get_all_locations():
@@ -116,8 +104,8 @@ def get_location_by_id(location_id):
 
   return Location.query.get(location_id)
 
-#IMAGE FUNCTIONS
 
+#IMAGE FUNCTIONS
 def create_image(location_id, img_src, img_tag):
   """Create a image instance."""
 
@@ -144,7 +132,7 @@ def create_gallery(location_id, img_src_list, img_tag):
 #import datetime to server temporarily
 #try making datetime objs in server based on what i get from user
 #use those to create booking objs
-#decide if i want it in the crud function or not.
+#decide if i want it in the crud function or not. - did i just never do this?
 
 #i will call the function for arrival and departure
 def get_datetime_format(date_input):
@@ -152,6 +140,8 @@ def get_datetime_format(date_input):
 
   input_date_format = "%Y-%m-%d"
   global_data_format = "%m-%d-%Y"
+  #strptime takes the date input and puts it in input format
+  #then it shifts it to global format
   return datetime.strptime(date_input, input_date_format).strftime(global_data_format)
 
 
@@ -176,7 +166,6 @@ def get_booking_by_user_id(user_id):
 
 
 #AMENITIES FUNCTIONS
-
 def create_amenity(amenity_title):
   """Create and return a new amenity."""
   amenity = Amenity(amenity_title = amenity_title)
@@ -200,13 +189,7 @@ def get_amenity_by_id(amentiy_id):
 
 
 
-
-
-
-
-
-
-#dunder name dunder main syntax from crup in movie ratings project
+#dunder name dunder main syntax from crud in movie ratings project
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)

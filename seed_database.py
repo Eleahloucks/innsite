@@ -8,6 +8,7 @@ from datetime import datetime
 import crud
 import model
 import server
+##run seed database when i make changes to model or crud to make sure they are working
 import cloudinary.uploader
 import os
 
@@ -24,12 +25,9 @@ db.create_all()
 
 
 
-## run this when i make changes to model or crud to make sure they are working
 
 
 #SAMPLE AMENITIES  - probably going to have 30 ish total
-
-
 amenity_1 = create_amenity('Free WIFI')
 amenity_2 = create_amenity('Dedicated Workspace')
 amenity_3 = create_amenity('Well-equipped Kitchen')
@@ -166,6 +164,7 @@ check_3 = get_location_by_id(3)
 user_1 = create_user('user1@email.com', "1234", "Michael", "Scott", "https://res.cloudinary.com/doqa1yq0d/image/upload/v1665002917/ifibmz147k74oi5jcku5.jpg")
 user_2 = create_user('user2@email.com', "5678", "Pam", "Beasley",  "https://openpsychometrics.org/tests/characters/test-resources/pics/TO/4.jpg")
 user_3 = create_user('user3@email.com', "9101112", "Dwight", "Schrutte",  "https://costumerocket.com/wp-content/uploads/Dwight-Schrute-shirt-.jpg")
+
 
 
 user_check_1 = get_user_by_email('user1@email.com')

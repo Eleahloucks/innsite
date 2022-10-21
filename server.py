@@ -92,7 +92,6 @@ def location_details(location_id):
     """Show details of a location."""
     location = crud.get_location_by_id(location_id)
     reviews = crud.get_review_by_location_id(location_id)
-
     return render_template("location_details.html", location = location, reviews = reviews)
 
 
@@ -103,13 +102,12 @@ def book_location(location_id):
     arrival = request.json.get("arrival")
     departure = request.json.get("departure")
     booked_location = request.json.get("location")
-
-    # # Figure out how to get the times to work.
-    # user = crud.get_user_by_id(session['user_id'])
-    # # crud.create_booking(arrival, departure, user, booked_location)
-    # #or this format
-    # global_date_format = "%m-%d-%Y"
-    # crud.create_booking(datetime.strptime(arrival, global_date_format), datetime.strptime(departure, global_date_format), user, location_id)
+    location = crud.get_location_by_id(location_id)
+    # Figure out how to get the times to work.
+    user = crud.get_user_by_id(session['user_id'])
+    # crud.create_booking(arrival, departure, user, booked_location)
+    #or this format
+    booking = crud.create_booking(arrival = crud.get_datetime_format(arrival), departure = crud.get_datetime_format(departure), user= user, location = location)
 
     return jsonify({
         "sucess": True,

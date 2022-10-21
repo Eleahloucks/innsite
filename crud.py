@@ -137,9 +137,12 @@ def create_gallery(location_id, img_src_list, img_tag):
 #i will call the function for arrival and departure
 def get_datetime_format(date_input):
   """get global format arrival and departure"""
-
+  print("\n\n\n\n\n\n\n")
+  print(date_input)
+  print("\n\n\n\n\n\n\n")
   input_date_format = "%Y-%m-%d"
   global_data_format = "%m-%d-%Y"
+
   #strptime takes the date input and puts it in input format
   #then it shifts it to global format
   return datetime.strptime(date_input, input_date_format).strftime(global_data_format)

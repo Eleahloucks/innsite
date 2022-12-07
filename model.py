@@ -174,6 +174,8 @@ if __name__ == "__main__":
     os.system("createdb projectdb")
 
     connect_to_db(app)
+    with app.app_context():
+        connect_to_db(app)
 
     # Make our tables
     db.create_all()

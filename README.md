@@ -1,7 +1,7 @@
 INNSITE
 =======
-See Project Demo: https://youtu.be/UdRlCYWR0aY
-Learn more about the developer: https://www.linkedin.com/in/eleah-miner-844969b8/
+See Project Demo: https://youtu.be/UdRlCYWR0aY<br>
+Learn more about the developer: https://www.linkedin.com/in/eleah-miner-844969b8/<br>
 Personal Website: https://intentionandinsight.com
 
 #### Description

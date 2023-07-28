@@ -25,4 +25,9 @@ Google Maps, Cloudinary
 <img width="1325" alt="Screen Shot 2022-10-16 at 2 49 39 PM" src="https://user-images.githubusercontent.com/62408100/196059932-70f3658b-9a35-4ae4-b774-e58430dde9ee.png">
 
 #### Bugs
-- currently there is a bug with the booking function on my app. I need to update a function in the server and hopefully it will be fixed later this week!
+- currently there is a bug with the booking function on my app. I need to update a function in the server. 
+
+#### Innsite 2.0
+- I'd like to create a 2.0 that allows users to login and message with eachother so they can get to know eachother becfore their trip starts. 
+
+
